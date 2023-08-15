@@ -4,7 +4,7 @@ function Categories() {
   return (
     <div className="flex flex-col items-center gap-7 p-8 bg-pinkBeige">
       <h2 className="text-4xl font-cormorant">
-        Discover fresh new finds from creative sellers!
+       An online marketplace for creative crafts!
       </h2>
 
       <div className="flex justify-center gap-16">
