@@ -2,7 +2,7 @@ import etsyLogo from '../assets/img/etsy.png';
 
 function Header() {
   return (
-    <div className="flex items-center pl-28 pr-28 p-5 gap-10">
+    <div className="flex items-center pl-28 pr-28 p-5 gap-10 border border-black">
       <div className="flex items-center gap-2 flex-1">
         <img src={etsyLogo} className="w-24"></img>
         <input

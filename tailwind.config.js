@@ -5,10 +5,12 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
+        inter: ['Inter', 'sans-serif'],
+        cormorant: ['Cormorant Garamond', 'serif']
       },
       backgroundColor: {
         footerBlue: '#2f466c',
+        pinkBeige: '#f8ebe6',
       },
     },
   },
