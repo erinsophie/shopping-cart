@@ -51,7 +51,24 @@ function Footer() {
       <div className="bg-blue-900 flex justify-between p-5">
         <p>United Kingdom | English(UK) | £(GBP)</p>
         <p>
-          This is a mock store created by <a href="">erinsophie</a>
+          This is a mock store created by
+          <a
+            href="https://github.com/erinsophie"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {' '}
+            erinsophie
+          </a>{' '}
+          |{' '}
+          <a
+            href="https://github.com/erinsophie/shopping-cart"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {' '}
+            Source{' '}
+          </a>
         </p>
       </div>
     </footer>
