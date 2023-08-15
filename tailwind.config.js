@@ -7,6 +7,9 @@ export default {
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
       },
+      backgroundColor: {
+        footerBlue: '#2f466c',
+      },
     },
   },
   plugins: [],
