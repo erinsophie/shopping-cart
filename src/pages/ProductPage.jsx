@@ -19,16 +19,18 @@ function ProductPage() {
           <i className="fa-solid fa-arrow-left"></i> Back to home page
         </Link>
         <h2 className="text-xl font-light">All {category.name} products</h2>
+        <p className="font-light">{products.length} results</p>
       </div>
 
-      <div className="grid grid-cols-3 gap-10">
+       <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {products.map((product) => (
-          <ProductPreview
-            key={product.id}
-            image={product.image}
-            name={product.name}
-            price={product.price}
-          />
+          <Link key={product.id}>
+            <ProductPreview
+              image={product.image}
+              name={product.name}
+              price={product.price}
+            />
+          </Link>
         ))}
       </div>
     </div>

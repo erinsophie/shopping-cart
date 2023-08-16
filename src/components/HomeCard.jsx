@@ -1,8 +1,8 @@
-import mugs from '../assets/products/mugs.jpg';
+import mug from '../assets/products/mug.jpg';
 
 function HomeCard() {
   return (
-    <div className="flex gap-5 justify-between items-center p-14 border border-gray-400 rounded-xl">
+    <div className="flex gap-12 justify-between items-center p-14 border border-gray-400 rounded-xl">
       <div className="flex flex-col gap-10">
         <div className="flex flex-col gap-2.5">
           <p className="font-light text-sm text-gray-500">
@@ -32,7 +32,7 @@ function HomeCard() {
         </div>
       </div>
       <img
-        src={mugs}
+        src={mug}
         alt="ceramic mugs"
         className="w-64 rounded-xl cursor-pointer hover:shadow-xl"
       ></img>

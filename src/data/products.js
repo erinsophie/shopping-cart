@@ -1,6 +1,6 @@
 import map from '../assets/products/map.jpg';
 import candles from '../assets/products/candles.jpg';
-import mugs from '../assets/products/mugs.jpg';
+import mug from '../assets/products/mug.jpg';
 import pot from '../assets/products/pot.jpg';
 import wallArt from '../assets/products/wall-art.jpg';
 
@@ -18,7 +18,7 @@ const products = [
   {
     id: 11,
     categoryId: 4,
-    name: 'Handmade Soy Wax Candles',
+    name: 'Soy Wax Candles',
     image: candles,
     price: 16.99,
     highlights: ['Handmade', 'Small business', 'Local seller'],
@@ -29,7 +29,7 @@ const products = [
     id: 12,
     categoryId: 4,
     name: 'Handmade Ceramic Mug',
-    image: mugs,
+    image: mug,
     price: 28,
     highlights: ['Handmade', 'Small business', 'Materials: Ceramic'],
     description:
