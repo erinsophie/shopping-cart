@@ -11,8 +11,8 @@ const categories = [
   },
   {
     id: 2,
-    name: 'Personalised gifts',
-    image: personalisedGifts,
+    name: 'Home decor',
+    image: homeDecor,
   },
   {
     id: 3,
@@ -21,8 +21,8 @@ const categories = [
   },
   {
     id: 4,
-    name: 'Home decor',
-    image: homeDecor,
+    name: 'Personalised gifts',
+    image: personalisedGifts,
   },
 ];
 

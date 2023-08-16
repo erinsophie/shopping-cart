@@ -1,8 +1,9 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import Error from '../pages/Error'
+import Error from '../pages/Error';
 import App from '../App';
 import Home from '../pages/Home';
 import ProductPage from '../pages/ProductPage';
+import ProductDetail from '../pages/ProductDetail';
 
 function Router() {
   const router = createBrowserRouter([
@@ -18,8 +19,12 @@ function Router() {
           path: '/:categoryId',
           element: <ProductPage />,
         },
+        {
+          path: '/:categoryId/:productId',
+          element: <ProductDetail />,
+        },
       ],
-      errorElement: <Error />
+      errorElement: <Error />,
     },
   ]);
 
