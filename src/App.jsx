@@ -4,7 +4,7 @@ import Footer from '../src/components/Footer';
 
 function App() {
   return (
-    <div className="border border-red-700">
+    <div>
       <Header />
       <Outlet />
       <Footer />

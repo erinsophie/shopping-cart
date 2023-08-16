@@ -1,6 +1,8 @@
 import map from '../assets/products/map.jpg';
 import candles from '../assets/products/candles.jpg';
-import mugs from '../assets/products/mugsjpg';
+import mugs from '../assets/products/mugs.jpg';
+import pot from '../assets/products/pot.jpg';
+import wallArt from '../assets/products/wall-art.jpg';
 
 const products = [
   {
@@ -37,9 +39,19 @@ const products = [
     id: 13,
     categoryId: 4,
     name: 'Handmade Plant Pot',
-    image: mugs,
+    image: pot,
     price: 32,
     highlights: ['Handmade', 'Local seller'],
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+  },
+  {
+    id: 14,
+    categoryId: 4,
+    name: 'Botanical Wall Art',
+    image: wallArt,
+    price: 10,
+    highlights: ['Local seller'],
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
   },
