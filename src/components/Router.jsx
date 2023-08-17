@@ -18,10 +18,6 @@ function Router() {
           element: <Home />,
         },
         {
-          path: '/basket',
-          element: <Basket />,
-        },
-        {
           path: '/:categoryId',
           element: <ProductPage />,
         },
@@ -37,6 +33,7 @@ function Router() {
   return (
     <BasketProvider>
       <RouterProvider router={router} />
+      <Basket />
     </BasketProvider>
   );
 }

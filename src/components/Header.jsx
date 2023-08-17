@@ -2,7 +2,7 @@ import { useBasket } from '../components/BasketContext';
 import { Link } from 'react-router-dom';
 
 function Header() {
-  const { basket } = useBasket();
+  const { basket, setShowBasket } = useBasket();
 
   return (
     <div className="flex items-center pl-28 pr-28 p-5 gap-10 border-b border-gray-300">
@@ -22,11 +22,10 @@ function Header() {
       </div>
 
       <div className="flex gap-2 items-center">
-        <Link to="/basket">
-          <button>
-            <i className="fa-solid fa-basket-shopping text-xl"></i>
-          </button>
-        </Link>
+        <button onClick={() => setShowBasket((prev) => !prev)}>
+          <i className="fa-solid fa-basket-shopping text-xl"></i>
+        </button>
+
         <p>{basket.length}</p>
       </div>
     </div>
