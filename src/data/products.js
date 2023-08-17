@@ -4,12 +4,15 @@ import mug from '../assets/products/mug.jpg';
 import pot from '../assets/products/pot.jpg';
 import wallArt from '../assets/products/wall-art.jpg';
 import notebook from '../assets/products/notebook.jpg';
-import pencils from '../assets/products/pencils.jpg';
 import backpack from '../assets/products/backpack.jpg';
 import planner from '../assets/products/planner.jpg';
 import doubleNecklace from '../assets/products/double-necklace.jpg';
 import pearlNecklace from '../assets/products/pearl-necklace.jpg';
 import earrings from '../assets/products/earrings.jpg';
+import sweater from '../assets/products/sweater.jpg';
+import pencilCase from '../assets/products/pencil-case.jpg';
+import embroideredTee from '../assets/products/embroidered-tee.jpg';
+import trousers from '../assets/products/trousers.jpg';
 
 const products = [
   {
@@ -18,16 +21,19 @@ const products = [
     name: 'Notebook',
     image: notebook,
     price: 5.99,
+    stars: 5,
     highlights: ['Small business', 'Local seller'],
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
   },
+
   {
     id: 11,
     categoryId: 1,
-    name: 'Set of colourful pencils',
-    image: pencils,
-    price: 3.99,
+    name: 'Recycled Material Backpack',
+    image: backpack,
+    price: 28,
+    stars: 4,
     highlights: ['Small business', 'Local seller'],
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
@@ -35,10 +41,11 @@ const products = [
   {
     id: 12,
     categoryId: 1,
-    name: 'Recycled Material Backpack',
-    image: backpack,
-    price: 28,
-    highlights: ['Small business', 'Local seller'],
+    name: 'Handmade Pencil Case',
+    image: pencilCase,
+    price: 10,
+    stars: 5,
+    highlights: ['Handmade', 'Small business'],
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
   },
@@ -48,6 +55,7 @@ const products = [
     name: 'Homework Planner',
     image: planner,
     price: 12.99,
+    stars: 3,
     highlights: ['Small business'],
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
@@ -58,6 +66,7 @@ const products = [
     name: 'Print of Map',
     image: map,
     price: 18,
+    stars: 3,
     highlights: ['Handmade', 'Small business'],
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
@@ -68,6 +77,7 @@ const products = [
     name: 'Soy Wax Candles',
     image: candles,
     price: 16.99,
+    stars: 5,
     highlights: ['Handmade', 'Small business', 'Local seller'],
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
@@ -78,6 +88,7 @@ const products = [
     name: 'Handmade Ceramic Mug',
     image: mug,
     price: 28,
+    stars: 4,
     highlights: ['Handmade', 'Small business', 'Materials: Ceramic'],
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
@@ -88,6 +99,7 @@ const products = [
     name: 'Handmade Plant Pot',
     image: pot,
     price: 32,
+    stars: 3,
     highlights: ['Handmade', 'Local seller'],
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
@@ -98,6 +110,7 @@ const products = [
     name: 'Botanical Wall Art',
     image: wallArt,
     price: 10,
+    stars: 5,
     highlights: ['Local seller'],
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
@@ -108,6 +121,7 @@ const products = [
     name: 'Double Chain Gold Necklace',
     image: doubleNecklace,
     price: 29.99,
+    stars: 4,
     highlights: ['Handmade', 'Small business', 'Local seller'],
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
@@ -118,6 +132,7 @@ const products = [
     name: 'Pearl Necklace',
     image: pearlNecklace,
     price: 35,
+    stars: 3,
     highlights: ['Small business', 'Local seller'],
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
@@ -128,7 +143,41 @@ const products = [
     name: 'Handmade Gold Earrings',
     image: earrings,
     price: 26,
+    stars: 5,
     highlights: ['Handmade', 'Small business'],
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+  },
+  {
+    id: 22,
+    categoryId: 4,
+    name: 'Hand-knitted Sweater',
+    image: sweater,
+    price: 32,
+    stars: 5,
+    highlights: ['Handmade', 'Small business', 'Local seller', 'Pure wool'],
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+  },
+  {
+    id: 23,
+    categoryId: 4,
+    name: 'Linen Trousers',
+    image: trousers,
+    price: 18,
+    stars: 5,
+    highlights: ['Handmade', 'Small business', 'Local seller'],
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+  },
+  {
+    id: 24,
+    categoryId: 4,
+    name: 'Embroidered Tee',
+    image: embroideredTee,
+    price: 15.99,
+    stars: 4,
+    highlights: ['Small business', 'Local seller'],
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
   },

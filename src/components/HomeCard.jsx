@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import mug from '../assets/products/mug.jpg';
 
 function HomeCard() {
@@ -9,9 +10,12 @@ function HomeCard() {
             Editor&apos;s Picks
           </p>
           <p className="text-2xl">Home Decor</p>
-          <p className="cursor-pointer">
-            Shop these unqiue finds <i className="fa-solid fa-arrow-right"></i>
-          </p>
+          <Link to='/2'>
+            <p className="cursor-pointer">
+              Shop these unqiue finds{' '}
+              <i className="fa-solid fa-arrow-right"></i>
+            </p>
+          </Link>
         </div>
 
         <div className="flex flex-col gap-4">

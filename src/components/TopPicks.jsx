@@ -1,10 +1,13 @@
-import pot from '../assets/products/pot.jpg';
+import cushions from '../assets/products/cushions.jpg';
+import womensGift from '../assets/products/womens-gift.jpg';
+import mensGift from '../assets/products/mens-gift.jpg';
+import birthday from '../assets/products/birthday.jpg';
 
 const topPicks = [
-  { id: 1, src: pot, name: 'Gifts under £25' },
-  { id: 2, src: pot, name: 'Gifts for Her' },
-  { id: 3, src: pot, name: 'Gifts for Him' },
-  { id: 4, src: pot, name: 'Birthday' },
+  { id: 1, src: cushions, name: 'Gifts under £25' },
+  { id: 2, src: womensGift, name: 'Gifts for Her' },
+  { id: 3, src: mensGift, name: 'Gifts for Him' },
+  { id: 4, src: birthday, name: 'Birthday' },
 ];
 
 function TopPicks() {
@@ -16,13 +19,18 @@ function TopPicks() {
       <p className="font-light text-sm text-gray-500">
         Lorem ipsum dolor sit amet, consectetur.
       </p>
+
       <div className="flex justify-between">
         {topPicks.map((item) => (
           <div
             key={item.id}
-            className="flex flex-col items-center border border-gray-400 rounded-xl w-56 overflow-hidden hover:shadow-xl cursor-pointer"
+            className="flex flex-col items-center border border-gray-400 rounded-xl hover:shadow-xl cursor-pointer h-64 w-56 overflow-hidden"
           >
-            <img className="object-cover" src={item.src}></img>
+            <img
+              className="object-cover overflow-hidden w-full"
+              src={item.src}
+            ></img>
+
             <p className="p-4">{item.name}</p>
           </div>
         ))}

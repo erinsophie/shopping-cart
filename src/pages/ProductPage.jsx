@@ -27,6 +27,7 @@ function ProductPage() {
           <Link to={`/${categoryId}/${product.id}`} key={product.id}>
             <ProductPreview
               image={product.image}
+              stars={product.stars}
               name={product.name}
               price={product.price}
             />

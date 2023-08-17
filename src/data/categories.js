@@ -1,7 +1,7 @@
 import backToSchool from '../assets/categories/back-to-school.jpg';
-import personalisedGifts from '../assets/categories/personalised-gifts.jpg';
-import jewellery from '../assets/categories/jewellery.jpg';
 import homeDecor from '../assets/categories/home-decor.jpg';
+import jewellery from '../assets/categories/jewellery.jpg';
+import clothing from '../assets/categories/clothing.jpg';
 
 const categories = [
   {
@@ -21,8 +21,8 @@ const categories = [
   },
   {
     id: 4,
-    name: 'Personalised gifts',
-    image: personalisedGifts,
+    name: 'Clothing',
+    image: clothing,
   },
 ];
 
