@@ -1,4 +1,5 @@
 import { Link, useParams } from 'react-router-dom';
+import { useBasket } from '../components/BasketContext';
 import categories from '../data/categories';
 import allProducts from '../data/products';
 
@@ -9,7 +10,12 @@ function renderStars(count) {
 }
 
 function ProductDetail() {
+  // url params
   const { categoryId, productId } = useParams();
+  // basket context
+  const { addToBasket } = useBasket();
+
+  // category and product
   const category = categories.find(
     (category) => category.id === parseInt(categoryId),
   );
@@ -64,7 +70,10 @@ function ProductDetail() {
             <p className="font-light">{product.description}</p>
           </div>
 
-          <button className="bg-black text-white rounded-full p-3">
+          <button
+            onClick={() => addToBasket(product)}
+            className="bg-black text-white rounded-full p-3"
+          >
             Add to basket
           </button>
 

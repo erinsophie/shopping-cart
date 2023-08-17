@@ -1,8 +1,15 @@
+import { useBasket } from '../components/BasketContext';
+import { Link } from 'react-router-dom';
+
 function Header() {
+  const { basket } = useBasket();
+
   return (
     <div className="flex items-center pl-28 pr-28 p-5 gap-10 border-b border-gray-300">
       <div className="flex items-center gap-3 flex-1">
-        <h1 className="text-4xl font-cormorant">Crafty</h1>
+        <Link to="/">
+          <h1 className="text-4xl font-cormorant">Crafty</h1>
+        </Link>
         <input
           type="serach"
           placeholder="Search for anything"
@@ -14,10 +21,13 @@ function Header() {
         </button>
       </div>
 
-      <div>
-        <button>
-          <i className="fa-solid fa-basket-shopping text-xl"></i>
-        </button>
+      <div className="flex gap-2 items-center">
+        <Link to="/basket">
+          <button>
+            <i className="fa-solid fa-basket-shopping text-xl"></i>
+          </button>
+        </Link>
+        <p>{basket.length}</p>
       </div>
     </div>
   );
