@@ -56,10 +56,12 @@ function BasketProvider({ children }) {
   }
 
   function getSubtotal(basket) {
-    return basket.reduce(
+    const subTotal = basket.reduce(
       (acc, item) => acc + item.product.price * item.quantity,
       0,
     );
+
+    return subTotal.toFixed(2)
   }
 
   function getBasketAmount() {

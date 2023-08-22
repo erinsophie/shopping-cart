@@ -1,9 +1,9 @@
-import { useBasket } from '../components/BasketContext';
+import { useBasket } from './BasketContext';
+import { Link } from 'react-router-dom';
 
 function Basket() {
   const {
     basket,
-    showBasket,
     setShowBasket,
     getSubtotal,
     getBasketAmount,
@@ -11,7 +11,7 @@ function Basket() {
     updateQuantity,
   } = useBasket();
 
-  return showBasket ? (
+  return (
     <div className="fixed top-0 right-0 w-1/3 h-full bg-white p-8 shadow-lg overflow-y-auto border border-red-900 flex flex-col gap-10">
       <div className="flex justify-between">
         <div className="flex flex-col gap-2">
@@ -66,12 +66,14 @@ function Basket() {
         ))}
       </div>
 
-      <div className="flex justify-between">
+      <div className="flex justify-between items-center">
         <p>Subtotal: £{getSubtotal(basket)}</p>
-        <p>Checkout</p>
+        <Link to="/checkout">
+          <p className="border border-black p-2.5 cursor-pointer">Checkout</p>
+        </Link>
       </div>
     </div>
-  ) : null;
+  );
 }
 
 export default Basket;

@@ -5,7 +5,7 @@ import App from '../App';
 import Home from '../pages/Home';
 import ProductPage from '../pages/ProductPage';
 import ProductDetail from '../pages/ProductDetail';
-import Basket from '../pages/Basket';
+import Checkout from '../pages/Checkout';
 
 function Router() {
   const router = createBrowserRouter([
@@ -25,6 +25,10 @@ function Router() {
           path: '/:categoryId/:productId',
           element: <ProductDetail />,
         },
+        {
+          path: '/checkout',
+          element: <Checkout />,
+        },
       ],
       errorElement: <Error />,
     },
@@ -33,7 +37,6 @@ function Router() {
   return (
     <BasketProvider>
       <RouterProvider router={router} />
-      <Basket />
     </BasketProvider>
   );
 }
