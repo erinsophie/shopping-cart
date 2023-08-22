@@ -11,9 +11,12 @@ function BasketProvider({ children }) {
   const [basket, setBasket] = useState([]);
   // set a reference to the basket state
   const basketRef = useRef(basket);
+  console.log(basket);
 
   // when basket changes, set the current ref to be the most recent state of the basket
-  // this avoids discrepencies in the quantity of products when addToBasket is clicked in succession
+  // this avoids discrepencies in the quantity
+  // of products when addToBasket is clicked in succession
+
   useEffect(() => {
     basketRef.current = basket;
   }, [basket]);
@@ -34,6 +37,24 @@ function BasketProvider({ children }) {
     }
   }
 
+  function updateQuantity(basketItem, event) {
+    const currentBasket = basketRef.current;
+    const indexOfItem = basket.indexOf(basketItem);
+    const updatedBasket = [...currentBasket];
+
+    if (event.target.textContent === '-') {
+      if (updatedBasket[indexOfItem].quantity === 1) {
+        deleteProduct(basketItem.product.id);
+      } else {
+        updatedBasket[indexOfItem].quantity -= 1;
+        setBasket(updatedBasket);
+      }
+    } else if (event.target.textContent === '+') {
+      updatedBasket[indexOfItem].quantity += 1;
+      setBasket(updatedBasket);
+    }
+  }
+
   function getSubtotal(basket) {
     return basket.reduce(
       (acc, item) => acc + item.product.price * item.quantity,
@@ -45,6 +66,11 @@ function BasketProvider({ children }) {
     return basket.reduce((acc, item) => acc + item.quantity, 0);
   }
 
+  function deleteProduct(productId) {
+    const newBasket = basket.filter((item) => item.product.id !== productId);
+    setBasket(newBasket);
+  }
+
   const providerValues = {
     basket,
     showBasket,
@@ -52,6 +78,8 @@ function BasketProvider({ children }) {
     addToBasket,
     getSubtotal,
     getBasketAmount,
+    deleteProduct,
+    updateQuantity,
   };
 
   return (
