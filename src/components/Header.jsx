@@ -2,7 +2,7 @@ import { useBasket } from '../components/BasketContext';
 import { Link } from 'react-router-dom';
 
 function Header() {
-  const { basket, setShowBasket } = useBasket();
+  const { setShowBasket, getBasketAmount } = useBasket();
 
   return (
     <div className="flex items-center pl-28 pr-28 p-5 gap-10 border-b border-gray-300">
@@ -26,7 +26,7 @@ function Header() {
           <i className="fa-solid fa-basket-shopping text-xl"></i>
         </button>
 
-        <p>{basket.length}</p>
+        <p>{getBasketAmount()}</p>
       </div>
     </div>
   );
