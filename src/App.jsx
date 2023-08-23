@@ -6,7 +6,7 @@ import Footer from '../src/components/Footer';
 import Basket from './components/Basket';
 
 function App() {
-  const { getBasketAmount, showBasket, setShowBasket, setBasket } = useBasket();
+  const { showBasket, setShowBasket, setBasket } = useBasket();
   const location = useLocation();
 
   useEffect(() => {

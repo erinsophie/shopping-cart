@@ -32,10 +32,15 @@ function Basket() {
         <div className="flex flex-col gap-4">
           {basket.map((basketItem, index) => (
             // each basket item
-            <div key={index} className="flex border border-black">
+            <div
+              key={index}
+              className="flex border border-black"
+              data-testid="basket-item"
+            >
               <div className="w-32 h-36">
                 <img
                   src={basketItem.product.image}
+                  alt={basketItem.product.name}
                   className="w-full h-full object-cover"
                 ></img>
               </div>
@@ -43,10 +48,11 @@ function Basket() {
               <div className="flex flex-col justify-between w-full p-4">
                 <div className="flex justify-between">
                   <p>{basketItem.product.name}</p>
-                  <i
+                  <button
                     onClick={() => deleteProduct(basketItem.product.id)}
-                    className="fa-regular fa-trash-can cursor-pointer"
-                  ></i>
+                    className="fa-regular fa-trash-can"
+                    data-testid={`delete-button-${basketItem.product.id}`}
+                  ></button>
                 </div>
                 <div className="flex justify-between">
                   <p>£{basketItem.product.price}</p>
@@ -54,6 +60,7 @@ function Basket() {
                     <button
                       onClick={(event) => updateQuantity(basketItem, event)}
                       className="bg-gray-300 w-7"
+                      data-testid={`decrement-${basketItem.product.id}`}
                     >
                       -
                     </button>
@@ -61,6 +68,7 @@ function Basket() {
                     <button
                       onClick={(event) => updateQuantity(basketItem, event)}
                       className="bg-gray-300 w-7"
+                      data-testid={`increment-${basketItem.product.id}`}
                     >
                       +
                     </button>

@@ -6,17 +6,13 @@ function useBasket() {
   return useContext(BasketContext);
 }
 
-function BasketProvider({ children }) {
+function BasketProvider({ children, initialBasket = [] }) {
   const [showBasket, setShowBasket] = useState(false);
-  const [basket, setBasket] = useState([]);
-  // set a reference to the basket state
+  const [basket, setBasket] = useState(initialBasket);
   const basketRef = useRef(basket);
 
-  console.log('basket:');
-  console.log(basket);
-  console.log(showBasket);
-
-  // when basket changes, set the current ref to be the most recent state of the basket
+  // when basket changes, set the current ref to be
+  // the most recent state of the basket
   // this avoids discrepencies in the quantity
   // of products when addToBasket is clicked in succession
 
