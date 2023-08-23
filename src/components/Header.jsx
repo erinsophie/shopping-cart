@@ -22,9 +22,11 @@ function Header() {
       </div>
 
       <div className="flex gap-2 items-center">
-        <button onClick={() => setShowBasket((prev) => !prev)}>
-          <i className="fa-solid fa-basket-shopping text-xl"></i>
-        </button>
+        <button
+          onClick={() => setShowBasket((prev) => !prev)}
+          className="fa-solid fa-basket-shopping text-xl"
+          data-testid='basket-icon'
+        ></button>
 
         <p>{getBasketAmount()}</p>
       </div>

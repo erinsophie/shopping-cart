@@ -1,10 +1,10 @@
-import { describe, it, expect, beforeEach } from 'vitest';
+import { describe, it, expect, beforeEach, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
-import { BasketProvider } from '../components/BasketContext';
-import Basket from '../components/Basket';
 import { BrowserRouter } from 'react-router-dom';
-import { useBasket } from '../components/BasketContext';
+import { BasketProvider, useBasket } from '../components/BasketContext';
+import userEvent from '@testing-library/user-event';
+import Basket from '../components/Basket';
+import ProductDetail from '../pages/ProductDetail';
 
 // tests for basket component
 
@@ -112,13 +112,14 @@ describe('Basket buttons', () => {
 
     // after clicking the x
     await user.click(closeBasketBtn);
-    expect(screen.queryByText('Basket')).toBeNull();
+    expect(screen.queryByText('Your Basket')).toBeNull();
   });
 
   it('Removes item from basket', async () => {
     const deleteButton = screen.getByTestId('delete-button-1');
     await user.click(deleteButton);
     expect(screen.queryByText('Test Product 1')).toBeNull();
+    expect(screen.getByText('Basket is empty')).toBeInTheDocument();
   });
 
   it('Does not render checkout button when there are 0 items in basket', async () => {
@@ -172,33 +173,35 @@ describe('Multiple product rednering', () => {
   });
 });
 
-// it's not a part of the basket's responsibilities to add items
+// it's not a part of the basket components responsibilities to add items
 // but this is to check if the basket registers when an item is added
 describe('Adds item to basket', () => {
   it('Adds item to basket', async () => {
     let user = userEvent.setup();
-    const mockProduct = { id: 1, name: 'Homework Planner', price: 12.99 };
-    let mockBasket = [];
 
-    // mock product detail page because that's where the button would be
-    function MockProductPage() {
-      const { addToBasket, basket } = useBasket();
-      mockBasket = basket;
+    // create mock of product detail component
+    vi.mock('../pages/ProductDetail', () => {
+      return {
+        default: function MockProductPage() {
+          const { addToBasket } = useBasket();
+          const mockProduct = { id: 1, name: 'Test Product 1', price: 10 };
 
-      return (
-        <div>
-          <p>{mockProduct.name}</p>
-          <button onClick={() => addToBasket(mockProduct)}>
-            Add to basket
-          </button>
-        </div>
-      );
-    }
+          return (
+            <div>
+              <p>{mockProduct.name}</p>
+              <button onClick={() => addToBasket(mockProduct)}>
+                Add to basket
+              </button>
+            </div>
+          );
+        },
+      };
+    });
 
     render(
       <BrowserRouter>
-        <BasketProvider initialBasket={mockBasket}>
-          <MockProductPage />
+        <BasketProvider>
+          <ProductDetail />
           <Basket />
         </BasketProvider>
         ,
