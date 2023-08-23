@@ -16,12 +16,13 @@ function Basket() {
       <div className="flex justify-between">
         <div className="flex flex-col gap-2">
           <p>Your basket</p>
-          <p>{getBasketAmount()} items</p>
+          <p data-testid='items-amount'>{getBasketAmount()} items</p>
         </div>
-        <i
+        <button
           onClick={() => setShowBasket((prev) => !prev)}
-          className="fa-solid fa-xmark text-2xl cursor-pointer"
-        ></i>
+          className="fa-solid fa-xmark text-2xl"
+          data-testid="close-basket-btn"
+        ></button>
       </div>
 
       {getBasketAmount() === 0 ? (
@@ -60,7 +61,6 @@ function Basket() {
                     <button
                       onClick={(event) => updateQuantity(basketItem, event)}
                       className="bg-gray-300 w-7"
-                      data-testid={`decrement-${basketItem.product.id}`}
                     >
                       -
                     </button>
@@ -68,7 +68,6 @@ function Basket() {
                     <button
                       onClick={(event) => updateQuantity(basketItem, event)}
                       className="bg-gray-300 w-7"
-                      data-testid={`increment-${basketItem.product.id}`}
                     >
                       +
                     </button>
@@ -81,18 +80,14 @@ function Basket() {
       )}
 
       <div className="flex justify-between items-center">
-        <p>Subtotal: £{getSubtotal(basket)}</p>
+        <p data-testid="subtotal">Subtotal: £{getSubtotal(basket)}</p>
         {getBasketAmount() > 0 ? (
           <Link to="/checkout">
             <button className="border border-black p-2.5 cursor-pointer">
               Checkout
             </button>
           </Link>
-        ) : (
-          <button className="border border-black p-2.5 cursor-pointer" disabled>
-            Checkout
-          </button>
-        )}
+        ) : null}
       </div>
     </div>
   );
