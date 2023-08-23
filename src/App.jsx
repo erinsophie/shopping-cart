@@ -6,12 +6,13 @@ import Footer from '../src/components/Footer';
 import Basket from './components/Basket';
 
 function App() {
-  const { showBasket, setShowBasket } = useBasket();
+  const { showBasket, setShowBasket, setBasket } = useBasket();
   const location = useLocation();
 
   useEffect(() => {
     if (location.pathname === '/checkout') {
       setShowBasket(false);
+      setBasket([]);
     }
   }, [location.pathname, setShowBasket]);
 

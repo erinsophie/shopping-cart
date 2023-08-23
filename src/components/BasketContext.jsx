@@ -61,7 +61,7 @@ function BasketProvider({ children }) {
       0,
     );
 
-    return subTotal.toFixed(2)
+    return subTotal.toFixed(2);
   }
 
   function getBasketAmount() {
@@ -75,6 +75,7 @@ function BasketProvider({ children }) {
 
   const providerValues = {
     basket,
+    setBasket,
     showBasket,
     setShowBasket,
     addToBasket,
