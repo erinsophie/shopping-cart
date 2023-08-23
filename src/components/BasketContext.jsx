@@ -11,7 +11,10 @@ function BasketProvider({ children }) {
   const [basket, setBasket] = useState([]);
   // set a reference to the basket state
   const basketRef = useRef(basket);
+
+  console.log('basket:');
   console.log(basket);
+  console.log(showBasket);
 
   // when basket changes, set the current ref to be the most recent state of the basket
   // this avoids discrepencies in the quantity

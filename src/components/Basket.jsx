@@ -25,8 +25,8 @@ function Basket() {
       </div>
 
       {getBasketAmount() === 0 ? (
-        <div className='flex justify-center'>
-          <p className='font-cormorant text-2xl'>Basket is empty</p>
+        <div className="flex justify-center">
+          <p className="font-cormorant text-2xl">Basket is empty</p>
         </div>
       ) : (
         <div className="flex flex-col gap-4">
@@ -74,9 +74,17 @@ function Basket() {
 
       <div className="flex justify-between items-center">
         <p>Subtotal: £{getSubtotal(basket)}</p>
-        <Link to="/checkout">
-          <p className="border border-black p-2.5 cursor-pointer">Checkout</p>
-        </Link>
+        {getBasketAmount() > 0 ? (
+          <Link to="/checkout">
+            <button className="border border-black p-2.5 cursor-pointer">
+              Checkout
+            </button>
+          </Link>
+        ) : (
+          <button className="border border-black p-2.5 cursor-pointer" disabled>
+            Checkout
+          </button>
+        )}
       </div>
     </div>
   );
