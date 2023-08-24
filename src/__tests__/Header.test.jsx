@@ -1,6 +1,6 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { render, screen } from '@testing-library/react';
-import { BrowserRouter } from 'react-router-dom';
+import { MemoryRouter } from 'react-router-dom';
 import { BasketProvider, useBasket } from '../components/BasketContext';
 import userEvent from '@testing-library/user-event';
 import App from '../App';
@@ -15,11 +15,11 @@ describe('Header component', () => {
 
   it('Clicking on the basket opens the basket display', async () => {
     render(
-      <BrowserRouter>
+      <MemoryRouter>
         <BasketProvider>
           <App />
         </BasketProvider>
-      </BrowserRouter>,
+      </MemoryRouter>,
     );
 
     const basket = screen.getByTestId('basket-icon');
@@ -28,7 +28,6 @@ describe('Header component', () => {
   });
 
   it('Adding an item updates the basket quantity', async () => {
-
     // create mock of product detail component
     vi.mock('../pages/ProductDetail', () => {
       return {
@@ -49,16 +48,17 @@ describe('Header component', () => {
     });
 
     render(
-      <BrowserRouter>
+      <MemoryRouter>
         <BasketProvider>
           <Header />
           <ProductDetail />
         </BasketProvider>
-      </BrowserRouter>,
+      </MemoryRouter>,
     );
 
     const button = screen.getByRole('button', { name: 'Add to basket' });
     await user.click(button);
-    expect(screen.getByText('1')).toBeInTheDocument();
+    const basketQuantity = screen.getByTestId('basket-quantity');
+    expect(basketQuantity.textContent).toBe('1');
   });
 });

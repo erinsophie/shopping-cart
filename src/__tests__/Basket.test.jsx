@@ -1,16 +1,13 @@
 import { describe, it, expect, beforeEach, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
-import { BrowserRouter } from 'react-router-dom';
+import { MemoryRouter } from 'react-router-dom';
 import { BasketProvider, useBasket } from '../components/BasketContext';
 import userEvent from '@testing-library/user-event';
 import Basket from '../components/Basket';
 import ProductDetail from '../pages/ProductDetail';
 
-// tests for basket component
-
-// initial render tests
-describe('Initial render', () => {
-  it('Basket intially renders with 0 products', () => {
+describe('Render tests', () => {
+  it('Initially renders with 0 items in basket', () => {
     render(
       <BasketProvider>
         <Basket />
@@ -23,7 +20,6 @@ describe('Initial render', () => {
   });
 });
 
-// increment and decrement button tests
 describe('Increment and decrement buttons', () => {
   let user;
   let mockBasket;
@@ -35,12 +31,12 @@ describe('Increment and decrement buttons', () => {
     ];
 
     render(
-      <BrowserRouter>
+      <MemoryRouter>
         <BasketProvider initialBasket={mockBasket}>
           <Basket />
         </BasketProvider>
         ,
-      </BrowserRouter>,
+      </MemoryRouter>,
     );
   });
 
@@ -51,7 +47,6 @@ describe('Increment and decrement buttons', () => {
     expect(incrementButton).toHaveLength(1);
     expect(decrementButton).toHaveLength(1);
   });
-
   it('Increments quantity of product', async () => {
     const incrementButton = screen.getByRole('button', { name: '+' });
 
@@ -83,7 +78,6 @@ describe('Increment and decrement buttons', () => {
   });
 });
 
-// other basket features
 describe('Basket buttons', () => {
   let user;
   let mockBasket;
@@ -95,12 +89,12 @@ describe('Basket buttons', () => {
     ];
 
     render(
-      <BrowserRouter>
+      <MemoryRouter>
         <BasketProvider initialBasket={mockBasket}>
           <Basket />
         </BasketProvider>
         ,
-      </BrowserRouter>,
+      </MemoryRouter>,
     );
   });
 
@@ -143,12 +137,12 @@ describe('Multiple product rednering', () => {
     ];
 
     render(
-      <BrowserRouter>
+      <MemoryRouter>
         <BasketProvider initialBasket={mockBasket}>
           <Basket />
         </BasketProvider>
         ,
-      </BrowserRouter>,
+      </MemoryRouter>,
     );
   });
 
@@ -199,13 +193,13 @@ describe('Adds item to basket', () => {
     });
 
     render(
-      <BrowserRouter>
+      <MemoryRouter>
         <BasketProvider>
           <ProductDetail />
           <Basket />
         </BasketProvider>
         ,
-      </BrowserRouter>,
+      </MemoryRouter>,
     );
 
     const button = screen.getByRole('button', { name: 'Add to basket' });

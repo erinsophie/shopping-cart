@@ -24,7 +24,11 @@ function ProductPage() {
 
       <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {products.map((product) => (
-          <Link to={`/${categoryId}/${product.id}`} key={product.id}>
+          <Link
+            to={`/${categoryId}/${product.id}`}
+            key={product.id}
+            aria-label={product.name}
+          >
             <ProductPreview
               image={product.image}
               stars={product.stars}

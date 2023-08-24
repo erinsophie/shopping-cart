@@ -6,7 +6,7 @@ function Error() {
       <p className="font-cormorant text-2xl">
         Oops! This page does not exist
       </p>
-      <Link to="/" className="text-blue-900 font-bold">
+      <Link to="/" className="text-blue-900 font-bold ">
         <i className="fa-solid fa-arrow-left"></i> Go back to Home page
       </Link>
     </div>

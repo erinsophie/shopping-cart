@@ -11,7 +11,11 @@ function Categories() {
 
       <div className="flex justify-center gap-16">
         {categories.map((category) => (
-          <Link to={`/${category.id}`} key={category.id}>
+          <Link
+            to={`/${category.id}`}
+            key={category.id}
+            aria-label={category.name}
+          >
             <CategoryPreview src={category.image} name={category.name} />
           </Link>
         ))}

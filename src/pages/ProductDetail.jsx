@@ -30,7 +30,10 @@ function ProductDetail() {
         <p className="font-cormorant text-2xl">
           Oops! It seems that this product does not exist
         </p>
-        <Link to={`/${categoryId}`} className="text-blue-900 font-bold">
+        <Link
+          to={`/${categoryId}`}
+          className="text-blue-900 font-bold"
+        >
           <i className="fa-solid fa-arrow-left"></i> Go back to {category.name}
         </Link>
       </div>
@@ -43,6 +46,7 @@ function ProductDetail() {
       </Link>
 
       <div className="flex gap-12 p-24">
+       
         <div className="min-w-[450px] max-w-[450px] min-h-[600px] max-h-[600px]">
           <img src={product.image} className="h-full w-full object-cover"></img>
         </div>

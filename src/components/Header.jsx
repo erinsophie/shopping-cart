@@ -11,7 +11,7 @@ function Header() {
           <h1 className="text-4xl font-cormorant">Crafty</h1>
         </Link>
         <input
-          type="serach"
+          type="search"
           placeholder="Search for anything"
           className="border border-black border-2 rounded-full bg-gray-100 w-full p-2.5 font-light"
         />
@@ -25,10 +25,9 @@ function Header() {
         <button
           onClick={() => setShowBasket((prev) => !prev)}
           className="fa-solid fa-basket-shopping text-xl"
-          data-testid='basket-icon'
+          data-testid="basket-icon"
         ></button>
-
-        <p>{getBasketAmount()}</p>
+        <p data-testid="basket-quantity">{getBasketAmount()}</p>
       </div>
     </div>
   );
