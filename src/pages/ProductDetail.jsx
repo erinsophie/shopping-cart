@@ -5,7 +5,7 @@ import allProducts from '../data/products';
 
 function renderStars(count) {
   return Array.from({ length: count }).map((_, index) => (
-    <i key={index} className="fa-solid fa-star text-xl"></i>
+    <i key={index} className="fa-solid fa-star text-sm lg:text-xl"></i>
   ));
 }
 
@@ -15,7 +15,6 @@ function ProductDetail() {
   // basket context
   const { addToBasket } = useBasket();
 
-  // category and product
   const category = categories.find(
     (category) => category.id === parseInt(categoryId),
   );
@@ -28,32 +27,30 @@ function ProductDetail() {
     return (
       <div className="flex flex-col h-screen p-6 gap-3">
         <p className="font-cormorant text-2xl">
-          Oops! It seems that this product does not exist
+          Oops! This product does not exist
         </p>
-        <Link
-          to={`/${categoryId}`}
-          className="text-blue-900 font-bold"
-        >
+        <Link to={`/${categoryId}`} className="text-blue-900 font-bold">
           <i className="fa-solid fa-arrow-left"></i> Go back to {category.name}
         </Link>
       </div>
     );
 
   return (
-    <div className="mt-16 mb-16 ml-32 mr-32">
+    <div className="mt-10 mb-10 ml-8 mr-8 lg:mt-16 lg:mb-16 lg:ml-32 lg:mr-32">
       <Link to={`/${categoryId}`} className="text-blue-900 font-bold">
         <i className="fa-solid fa-arrow-left"></i> Back to {category.name}
       </Link>
 
-      <div className="flex gap-12 p-24">
-       
-        <div className="min-w-[450px] max-w-[450px] min-h-[600px] max-h-[600px]">
+      <div className="flex flex-col p-6 gap-8 md:flex-row md:p-12 lg:flex-row lg:gap-12 lg:p-24">
+        <div className="min-w-[300px] max-w-[300px] min-h-[450px] max-h-[450px] lg:min-w-[450px] lg:max-w-[450px] lg:min-h-[600px] lg:max-h-[600px]">
           <img src={product.image} className="h-full w-full object-cover"></img>
         </div>
 
         <div className="flex flex-col gap-6">
           <div className="flex flex-col gap-2">
-            <p className="font-cormorant text-3xl">{product.name}</p>
+            <p className="font-cormorant text-2xl md:text-3xl lg:text-3xl">
+              {product.name}
+            </p>
             <p className="text-xl">£{product.price}</p>
             <div>{renderStars(product.stars)}</div>
           </div>
@@ -76,27 +73,31 @@ function ProductDetail() {
 
           <button
             onClick={() => addToBasket(product)}
-            className="bg-black text-white rounded-full p-3"
+            className="bg-black text-white rounded-full p-3 transform transition-transform ease-in-out duration-200 hover:scale-105"
           >
             Add to basket
           </button>
 
-          <div className="flex justify-between items-center">
+          <div className="flex justify-between md:gap-2 items-center">
             <div className="flex flex-col gap-2 items-center">
-              <i className="fa-solid fa-truck text-2xl"></i>
-              <p>Free shipping</p>
+              <i className="fa-solid fa-truck text-base md:text-2xl lg:text-2xl"></i>
+              <p className="text-center text-xs lg:text-base">Free shipping</p>
             </div>
             <div className="flex flex-col gap-2 items-center">
-              <i className="fa-regular fa-circle-check text-2xl"></i>
-              <p>30-Day-Gaurantee</p>
+              <i className="fa-regular fa-circle-check text-base md:text-2xl lg:text-2xl"></i>
+              <p className="text-center text-xs lg:text-base">
+                30-Day-Gaurantee
+              </p>
             </div>
             <div className="flex flex-col gap-2 items-center">
-              <i className="fa-solid fa-rotate-left text-2xl"></i>
-              <p>Simple Returns</p>
+              <i className="fa-solid fa-rotate-left text-base md:text-2xl lg:text-2xl"></i>
+              <p className="text-center text-xs lg:text-base">Simple Returns</p>
             </div>
             <div className="flex flex-col gap-2 items-center">
-              <i className="fa-solid fa-gift text-2xl"></i>
-              <p>3-5 Day Delivery</p>
+              <i className="fa-solid fa-gift text-base md:text-2xl lg:text-2xl"></i>
+              <p className="text-center text-xs lg:text-base">
+                3-5 Day Delivery
+              </p>
             </div>
           </div>
         </div>

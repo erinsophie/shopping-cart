@@ -12,15 +12,15 @@ function Basket() {
   } = useBasket();
 
   return (
-    <div className="fixed top-0 right-0 z-10 w-1/3 h-full bg-white p-8 overflow-y-auto border border-black flex flex-col gap-10">
+    <div className="fixed top-0 right-0 z-10 w-full h-full bg-white p-8 overflow-y-auto border border-black flex flex-col gap-10 md:w-1/2 lg:w-1/3">
       <div className="flex justify-between">
         <div className="flex flex-col gap-2">
           <p>Your basket</p>
-          <p data-testid='items-amount'>{getBasketAmount()} items</p>
+          <p data-testid="items-amount">{getBasketAmount()} items</p>
         </div>
         <button
           onClick={() => setShowBasket((prev) => !prev)}
-          className="fa-solid fa-xmark text-2xl"
+          className="fa-solid fa-xmark text-2xl transform transition-transform ease-in-out duration-200 hover:scale-110"
           data-testid="close-basket-btn"
         ></button>
       </div>
@@ -83,7 +83,7 @@ function Basket() {
         <p data-testid="subtotal">Subtotal: £{getSubtotal(basket)}</p>
         {getBasketAmount() > 0 ? (
           <Link to="/checkout">
-            <button className="border border-black p-2.5 cursor-pointer">
+            <button className="border border-black p-2.5 transform transition-transform ease-in-out duration-200 hover:scale-110">
               Checkout
             </button>
           </Link>

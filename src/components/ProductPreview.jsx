@@ -1,6 +1,9 @@
 function renderStars(count) {
   return Array.from({ length: count }).map((_, index) => (
-    <i key={index} className="fa-solid fa-star"></i>
+    <i
+      key={index}
+      className="fa-solid fa-star text-[10px] md:text-[14px] lg:text-[14px]"
+    ></i>
   ));
 }
 
@@ -14,8 +17,8 @@ function ProductPreview({ image, stars, name, price }) {
       ></img>
 
       <div>{renderStars(stars)}</div>
-      <p className="truncate">{name}</p>
-      <p>£{price}</p>
+      <p className="truncate text-xs md:text-sm lg:text-sm">{name}</p>
+      <p className="text-xs md:text-sm lg:text-sm">£{price}</p>
     </div>
   );
 }

@@ -1,9 +1,7 @@
-
-
 function Footer() {
   return (
-    <footer className="text-indigo-50 font-light">
-      <div className="p-10 flex justify-evenly bg-footerBlue">
+    <footer className="text-indigo-50 font-light text-xs md:text-sm lg:text-base">
+      <div className="flex gap-6 p-6 bg-footerBlue md:justify-evenly md:p-10 lg:justify-evenly lg:p-10">
         <div>
           <p className="font-medium mb-5">Shop</p>
           <ul className="cursor-pointer flex flex-col gap-3">
@@ -36,7 +34,7 @@ function Footer() {
             <li className="hover:underline">Privacy Settings</li>
           </ul>
 
-          <div className="flex gap-5 text-3xl mt-10">
+          <div className="flex gap-5 text-sm mt-10 md:text-2xl lg:text-3xl">
             <i className="fa-brands fa-instagram"></i>
             <i className="fa-brands fa-facebook"></i>
             <i className="fa-brands fa-pinterest"></i>

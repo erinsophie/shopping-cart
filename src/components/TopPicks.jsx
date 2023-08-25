@@ -13,25 +13,25 @@ const topPicks = [
 function TopPicks() {
   return (
     <div className="flex flex-col gap-5">
-      <h2 className="text-xl">
+      <h2 className="text-base md:text-xl lg:text-xl">
         Shop our top picks <i className="fa-solid fa-arrow-right"></i>
       </h2>
       <p className="font-light text-sm text-gray-500">
         Lorem ipsum dolor sit amet, consectetur.
       </p>
 
-      <div className="flex justify-between">
+      <div className="flex flex-col items-center gap-10 justify-between md:gap-6 md:flex-row lg:flex-row">
         {topPicks.map((item) => (
           <div
             key={item.id}
-            className="flex flex-col items-center border border-gray-400 rounded-xl hover:shadow-xl cursor-pointer h-64 w-56 overflow-hidden"
+            className="flex flex-col items-center border border-gray-400 rounded-xl cursor-pointer h-80 w-80 overflow-hidden md:h-52 md:w-52 lg:h-64 lg:w-64"
           >
             <img
               className="object-cover overflow-hidden w-full"
               src={item.src}
             ></img>
 
-            <p className="p-4">{item.name}</p>
+            <p className="p-4 text-base md:text-sm lg:text-base">{item.name}</p>
           </div>
         ))}
       </div>
