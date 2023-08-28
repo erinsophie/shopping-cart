@@ -9,7 +9,10 @@ function renderStars(count) {
 
 function ProductPreview({ image, stars, name, price }) {
   return (
-    <div className="h-full flex flex-col gap-1 font-light text-sm lg:text-base cursor-pointer">
+    <div
+      className="h-full flex flex-col gap-1 font-light text-sm lg:text-base cursor-pointer"
+      data-testid="product-preview"
+    >
       <img
         className="rounded-md object-cover flex-1"
         src={image}

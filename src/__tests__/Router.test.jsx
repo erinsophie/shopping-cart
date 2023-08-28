@@ -6,7 +6,7 @@ import Router from '../components/Router';
 import allProducts from '../data/products';
 import categories from '../data/categories';
 
-describe('Renders product pages and product detail pages', () => {
+describe('Product page and product detail page', () => {
   beforeEach(() => {
     delete window.location;
   });

@@ -43,8 +43,6 @@ describe('Render tests', () => {
           return (
             <div
               data-testid="mock-category-preview"
-              data-testsrc={src}
-              data-testname={name}
             >
               <img src={src}></img>
               <p>{name}</p>
@@ -54,17 +52,14 @@ describe('Render tests', () => {
       };
     });
 
-    render(
-      <MemoryRouter>
-        <Categories />
-      </MemoryRouter>,
-    );
     const previews = screen.getAllByTestId('mock-category-preview');
+    expect(previews.length).toBe(categories.length);
 
     categories.forEach((category, index) => {
       const mockPreview = previews[index];
-      expect(mockPreview.getAttribute('data-testsrc')).toBe(category.image);
-      expect(mockPreview.getAttribute('data-testname')).toBe(category.name);
+
+      expect(mockPreview.querySelector('img')).toHaveAttribute('src', category.image);
+      expect(mockPreview.querySelector('p').textContent).toBe(category.name);
     });
   });
 });

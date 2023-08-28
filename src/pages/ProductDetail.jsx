@@ -36,7 +36,10 @@ function ProductDetail() {
     );
 
   return (
-    <div className="mt-10 mb-10 ml-8 mr-8 lg:mt-16 lg:mb-16 lg:ml-32 lg:mr-32">
+    <div
+      className="mt-10 mb-10 ml-8 mr-8 lg:mt-16 lg:mb-16 lg:ml-32 lg:mr-32"
+      data-testid="product-detail-page"
+    >
       <Link to={`/${categoryId}`} className="text-blue-900 font-bold">
         <i className="fa-solid fa-arrow-left"></i> Back to {category.name}
       </Link>
