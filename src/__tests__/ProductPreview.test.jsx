@@ -1,10 +1,8 @@
 import { describe, it, expect, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect';
 import ProductPage from '../pages/ProductPage';
-import { useParams } from 'react-router-dom';
+import { useParams, MemoryRouter } from 'react-router-dom';
 import allProducts from '../data/products';
-import { MemoryRouter } from 'react-router-dom';
 
 // mock react-router-dom in order to mock useParams
 vi.mock('react-router-dom', async () => {

@@ -1,7 +1,6 @@
 import { describe, it, expect, beforeEach } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import { cleanup } from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect';
 import Router from '../components/Router';
 import allProducts from '../data/products';
 import categories from '../data/categories';

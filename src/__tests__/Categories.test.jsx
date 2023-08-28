@@ -19,7 +19,7 @@ describe('Render tests', () => {
 
     container = renderedContainer;
   });
-   
+
   // snapshot
   it('Matches snapshot', () => {
     expect(container).toMatchSnapshot();

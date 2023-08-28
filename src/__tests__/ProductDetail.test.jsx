@@ -6,7 +6,6 @@ import { useParams } from 'react-router-dom';
 import allProducts from '../data/products';
 import categories from '../data/categories';
 import { BasketProvider } from '../components/BasketContext';
-import '@testing-library/jest-dom/extend-expect';
 
 // mock react-router-dom in order to mock useParams
 vi.mock('react-router-dom', async () => {

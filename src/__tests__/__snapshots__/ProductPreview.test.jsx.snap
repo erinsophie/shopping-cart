@@ -18,7 +18,7 @@ exports[`<ProductPage /> > renders ProductPreview component with correct props b
          Back to Home page
       </a>
       <h2
-        class="text-base lg:text-xl font-light"
+        class="text-base font-light lg:text-xl"
       >
         All 
         Back to school
@@ -39,7 +39,7 @@ exports[`<ProductPage /> > renders ProductPreview component with correct props b
         href="/1/10"
       >
         <div
-          class="h-full flex flex-col gap-1 font-light text-sm lg:text-base cursor-pointer"
+          class="h-full flex flex-col gap-1 font-light text-sm cursor-pointer lg:text-base"
           data-testid="product-preview"
         >
           <img
@@ -49,28 +49,28 @@ exports[`<ProductPage /> > renders ProductPreview component with correct props b
           />
           <div>
             <i
-              class="fa-solid fa-star text-[10px] md:text-[14px] lg:text-[14px]"
+              class="fa-solid fa-star text-[10px] md:text-[14px]"
             />
             <i
-              class="fa-solid fa-star text-[10px] md:text-[14px] lg:text-[14px]"
+              class="fa-solid fa-star text-[10px] md:text-[14px]"
             />
             <i
-              class="fa-solid fa-star text-[10px] md:text-[14px] lg:text-[14px]"
+              class="fa-solid fa-star text-[10px] md:text-[14px]"
             />
             <i
-              class="fa-solid fa-star text-[10px] md:text-[14px] lg:text-[14px]"
+              class="fa-solid fa-star text-[10px] md:text-[14px]"
             />
             <i
-              class="fa-solid fa-star text-[10px] md:text-[14px] lg:text-[14px]"
+              class="fa-solid fa-star text-[10px] md:text-[14px]"
             />
           </div>
           <p
-            class="truncate text-xs md:text-sm lg:text-sm"
+            class="truncate text-xs md:text-sm"
           >
             Notebook
           </p>
           <p
-            class="text-xs md:text-sm lg:text-sm"
+            class="text-xs md:text-sm"
           >
             £
             5.99
@@ -82,7 +82,7 @@ exports[`<ProductPage /> > renders ProductPreview component with correct props b
         href="/1/11"
       >
         <div
-          class="h-full flex flex-col gap-1 font-light text-sm lg:text-base cursor-pointer"
+          class="h-full flex flex-col gap-1 font-light text-sm cursor-pointer lg:text-base"
           data-testid="product-preview"
         >
           <img
@@ -92,25 +92,25 @@ exports[`<ProductPage /> > renders ProductPreview component with correct props b
           />
           <div>
             <i
-              class="fa-solid fa-star text-[10px] md:text-[14px] lg:text-[14px]"
+              class="fa-solid fa-star text-[10px] md:text-[14px]"
             />
             <i
-              class="fa-solid fa-star text-[10px] md:text-[14px] lg:text-[14px]"
+              class="fa-solid fa-star text-[10px] md:text-[14px]"
             />
             <i
-              class="fa-solid fa-star text-[10px] md:text-[14px] lg:text-[14px]"
+              class="fa-solid fa-star text-[10px] md:text-[14px]"
             />
             <i
-              class="fa-solid fa-star text-[10px] md:text-[14px] lg:text-[14px]"
+              class="fa-solid fa-star text-[10px] md:text-[14px]"
             />
           </div>
           <p
-            class="truncate text-xs md:text-sm lg:text-sm"
+            class="truncate text-xs md:text-sm"
           >
             Recycled Material Backpack
           </p>
           <p
-            class="text-xs md:text-sm lg:text-sm"
+            class="text-xs md:text-sm"
           >
             £
             28
@@ -122,7 +122,7 @@ exports[`<ProductPage /> > renders ProductPreview component with correct props b
         href="/1/12"
       >
         <div
-          class="h-full flex flex-col gap-1 font-light text-sm lg:text-base cursor-pointer"
+          class="h-full flex flex-col gap-1 font-light text-sm cursor-pointer lg:text-base"
           data-testid="product-preview"
         >
           <img
@@ -132,28 +132,28 @@ exports[`<ProductPage /> > renders ProductPreview component with correct props b
           />
           <div>
             <i
-              class="fa-solid fa-star text-[10px] md:text-[14px] lg:text-[14px]"
+              class="fa-solid fa-star text-[10px] md:text-[14px]"
             />
             <i
-              class="fa-solid fa-star text-[10px] md:text-[14px] lg:text-[14px]"
+              class="fa-solid fa-star text-[10px] md:text-[14px]"
             />
             <i
-              class="fa-solid fa-star text-[10px] md:text-[14px] lg:text-[14px]"
+              class="fa-solid fa-star text-[10px] md:text-[14px]"
             />
             <i
-              class="fa-solid fa-star text-[10px] md:text-[14px] lg:text-[14px]"
+              class="fa-solid fa-star text-[10px] md:text-[14px]"
             />
             <i
-              class="fa-solid fa-star text-[10px] md:text-[14px] lg:text-[14px]"
+              class="fa-solid fa-star text-[10px] md:text-[14px]"
             />
           </div>
           <p
-            class="truncate text-xs md:text-sm lg:text-sm"
+            class="truncate text-xs md:text-sm"
           >
             Handmade Pencil Case
           </p>
           <p
-            class="text-xs md:text-sm lg:text-sm"
+            class="text-xs md:text-sm"
           >
             £
             10
@@ -165,7 +165,7 @@ exports[`<ProductPage /> > renders ProductPreview component with correct props b
         href="/1/13"
       >
         <div
-          class="h-full flex flex-col gap-1 font-light text-sm lg:text-base cursor-pointer"
+          class="h-full flex flex-col gap-1 font-light text-sm cursor-pointer lg:text-base"
           data-testid="product-preview"
         >
           <img
@@ -175,22 +175,22 @@ exports[`<ProductPage /> > renders ProductPreview component with correct props b
           />
           <div>
             <i
-              class="fa-solid fa-star text-[10px] md:text-[14px] lg:text-[14px]"
+              class="fa-solid fa-star text-[10px] md:text-[14px]"
             />
             <i
-              class="fa-solid fa-star text-[10px] md:text-[14px] lg:text-[14px]"
+              class="fa-solid fa-star text-[10px] md:text-[14px]"
             />
             <i
-              class="fa-solid fa-star text-[10px] md:text-[14px] lg:text-[14px]"
+              class="fa-solid fa-star text-[10px] md:text-[14px]"
             />
           </div>
           <p
-            class="truncate text-xs md:text-sm lg:text-sm"
+            class="truncate text-xs md:text-sm"
           >
             Homework Planner
           </p>
           <p
-            class="text-xs md:text-sm lg:text-sm"
+            class="text-xs md:text-sm"
           >
             £
             12.99

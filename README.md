@@ -1,6 +1,6 @@
 # Shopping cart
 
-## [Live Demo]()
+## [Live Demo](https://glowing-custard-e8ce90.netlify.app)
 
 ![Shopping cart](./src/assets/img/links-kitchen.png)
 
