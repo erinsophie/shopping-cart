@@ -23,13 +23,16 @@ describe('<ProductDetail />', () => {
     useParams.mockReturnValue({ categoryId: '1', productId: '10' });
 
     // render product detail page
-    render(
+    const { container } = render(
       <MemoryRouter>
         <BasketProvider>
           <ProductDetail />
         </BasketProvider>
       </MemoryRouter>,
     );
+
+    // snapshot
+    expect(container).toMatchSnapshot();
 
     // get product object
     const product = allProducts.find((product) => product.id === 10);

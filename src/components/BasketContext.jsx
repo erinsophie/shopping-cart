@@ -72,6 +72,11 @@ function BasketProvider({ children, initialBasket = [] }) {
     setBasket(newBasket);
   }
 
+  function clearBasket() {
+    setShowBasket(false);
+    setBasket([]);
+  }
+
   const providerValues = {
     basket,
     setBasket,
@@ -82,6 +87,7 @@ function BasketProvider({ children, initialBasket = [] }) {
     getBasketAmount,
     deleteProduct,
     updateQuantity,
+    clearBasket,
   };
 
   return (

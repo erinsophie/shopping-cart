@@ -6,14 +6,23 @@ import Categories from '../components/Categories';
 import categories from '../data/categories';
 
 describe('Render tests', () => {
+  let container;
+
   beforeEach(() => {
-    render(
+    const { container: renderedContainer } = render(
       <MemoryRouter>
         <BasketProvider>
           <Categories />
         </BasketProvider>
       </MemoryRouter>,
     );
+
+    container = renderedContainer;
+  });
+   
+  // snapshot
+  it('Matches snapshot', () => {
+    expect(container).toMatchSnapshot();
   });
 
   it('Renders the main tagline correctly', () => {
@@ -41,9 +50,7 @@ describe('Render tests', () => {
       return {
         default: function MockCategoryPreview({ src, name }) {
           return (
-            <div
-              data-testid="mock-category-preview"
-            >
+            <div data-testid="mock-category-preview">
               <img src={src}></img>
               <p>{name}</p>
             </div>
@@ -58,7 +65,10 @@ describe('Render tests', () => {
     categories.forEach((category, index) => {
       const mockPreview = previews[index];
 
-      expect(mockPreview.querySelector('img')).toHaveAttribute('src', category.image);
+      expect(mockPreview.querySelector('img')).toHaveAttribute(
+        'src',
+        category.image,
+      );
       expect(mockPreview.querySelector('p').textContent).toBe(category.name);
     });
   });

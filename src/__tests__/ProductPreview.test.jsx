@@ -21,13 +21,16 @@ describe('<ProductPage />', () => {
     useParams.mockReturnValue({ categoryId: '1' });
 
     // by rendering the product page, we render all product previews for category 1
-    render(
+    const { container } = render(
       <MemoryRouter>
         <ProductPage />
       </MemoryRouter>,
     );
 
-    // product objects
+    // snapshot
+    expect(container).toMatchSnapshot();
+
+    // array of products
     const expectedProducts = allProducts.filter(
       (product) => product.categoryId === 1,
     );
@@ -35,14 +38,13 @@ describe('<ProductPage />', () => {
     // preview components
     const productPreviews = screen.getAllByTestId('product-preview');
 
-    // check length
+    // check amount of products rendered is correct
     expect(productPreviews.length).toBe(expectedProducts.length);
 
-    // check if the expected product details are displayed
+    // loop through array of expected products to check props
     expectedProducts.forEach((product, index) => {
       const component = productPreviews[index];
 
-      // check img
       expect(component.querySelector('img')).toHaveAttribute(
         'src',
         product.image,

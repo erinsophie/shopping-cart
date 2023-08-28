@@ -1,0 +1,50 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Render tests > Matches snapshot 1`] = `
+<div>
+  <div
+    class="fixed top-0 right-0 z-10 w-full h-full bg-white p-8 overflow-y-auto border border-black flex flex-col gap-10 md:w-1/2 lg:w-1/3"
+  >
+    <div
+      class="flex justify-between"
+    >
+      <div
+        class="flex flex-col gap-2"
+      >
+        <p>
+          Your basket
+        </p>
+        <p
+          data-testid="items-amount"
+        >
+          0
+           items
+        </p>
+      </div>
+      <button
+        class="fa-solid fa-xmark text-2xl transform transition-transform ease-in-out duration-200 hover:scale-110"
+        data-testid="close-basket-btn"
+      />
+    </div>
+    <div
+      class="flex justify-center"
+    >
+      <p
+        class="font-cormorant text-2xl"
+      >
+        Basket is empty
+      </p>
+    </div>
+    <div
+      class="flex justify-between items-center"
+    >
+      <p
+        data-testid="subtotal"
+      >
+        Subtotal: £
+        0.00
+      </p>
+    </div>
+  </div>
+</div>
+`;

@@ -7,6 +7,17 @@ import Basket from '../components/Basket';
 import ProductDetail from '../pages/ProductDetail';
 
 describe('Render tests', () => {
+  // snapshot
+  it('Matches snapshot', () => {
+    const { container } = render(
+      <BasketProvider>
+        <Basket />
+      </BasketProvider>,
+    );
+
+    expect(container).toMatchSnapshot();
+  });
+
   it('Initially renders with 0 items in basket', () => {
     render(
       <BasketProvider>
@@ -47,6 +58,7 @@ describe('Increment and decrement buttons', () => {
     expect(incrementButton).toHaveLength(1);
     expect(decrementButton).toHaveLength(1);
   });
+
   it('Increments quantity of product', async () => {
     const incrementButton = screen.getByRole('button', { name: '+' });
 

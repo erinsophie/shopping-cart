@@ -9,6 +9,7 @@ function Basket() {
     getBasketAmount,
     deleteProduct,
     updateQuantity,
+    clearBasket,
   } = useBasket();
 
   return (
@@ -83,7 +84,7 @@ function Basket() {
         <p data-testid="subtotal">Subtotal: £{getSubtotal(basket)}</p>
         {getBasketAmount() > 0 ? (
           <Link to="/checkout">
-            <button className="border border-black p-2.5 transform transition-transform ease-in-out duration-200 hover:scale-110">
+            <button onClick={() => clearBasket()} className="border border-black p-2.5 transform transition-transform ease-in-out duration-200 hover:scale-110">
               Checkout
             </button>
           </Link>

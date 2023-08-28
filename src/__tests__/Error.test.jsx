@@ -4,19 +4,20 @@ import { MemoryRouter } from 'react-router-dom';
 import Error from '../pages/Error';
 
 describe('Error page tests', () => {
-  let container
+  let container;
 
   beforeEach(() => {
     const { container: renderedContainer } = render(
       <MemoryRouter>
         <Error />
-      </MemoryRouter>
+      </MemoryRouter>,
     );
 
-    container = renderedContainer
+    container = renderedContainer;
   });
-
-  it('Matches the snapshot', () => {
+  
+  // snapshot
+  it('Matches snapshot', () => {
     expect(container).toMatchSnapshot();
   });
 

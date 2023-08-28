@@ -13,6 +13,19 @@ describe('Header component', () => {
     user = userEvent.setup();
   });
 
+  // snapshot
+  it('Matches snapshot', () => {
+    const { container } = render(
+      <MemoryRouter>
+        <BasketProvider>
+          <Header />
+        </BasketProvider>
+      </MemoryRouter>,
+    );
+
+    expect(container).toMatchSnapshot();
+  });
+
   it('Clicking on the basket opens the basket display', async () => {
     render(
       <MemoryRouter>

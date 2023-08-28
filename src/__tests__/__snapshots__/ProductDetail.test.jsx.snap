@@ -1,0 +1,159 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`<ProductDetail /> > renders ProductDetail page correctly 1`] = `
+<div>
+  <div
+    class="mt-10 mb-10 ml-8 mr-8 lg:mt-16 lg:mb-16 lg:ml-32 lg:mr-32"
+    data-testid="product-detail-page"
+  >
+    <a
+      class="text-blue-900 font-bold"
+      href="/1"
+    >
+      <i
+        class="fa-solid fa-arrow-left"
+      />
+       Back to 
+      Back to school
+    </a>
+    <div
+      class="flex flex-col p-6 gap-8 md:flex-row md:p-12 lg:flex-row lg:gap-12 lg:p-24"
+    >
+      <div
+        class="min-w-[300px] max-w-[300px] min-h-[450px] max-h-[450px] lg:min-w-[450px] lg:max-w-[450px] lg:min-h-[600px] lg:max-h-[600px]"
+      >
+        <img
+          class="h-full w-full object-cover"
+          src="/src/assets/products/notebook.jpg"
+        />
+      </div>
+      <div
+        class="flex flex-col gap-6"
+      >
+        <div
+          class="flex flex-col gap-2"
+        >
+          <p
+            class="font-cormorant text-2xl md:text-3xl lg:text-3xl"
+          >
+            Notebook
+          </p>
+          <p
+            class="text-xl"
+          >
+            £
+            5.99
+          </p>
+          <div>
+            <i
+              class="fa-solid fa-star text-sm lg:text-xl"
+            />
+            <i
+              class="fa-solid fa-star text-sm lg:text-xl"
+            />
+            <i
+              class="fa-solid fa-star text-sm lg:text-xl"
+            />
+            <i
+              class="fa-solid fa-star text-sm lg:text-xl"
+            />
+            <i
+              class="fa-solid fa-star text-sm lg:text-xl"
+            />
+          </div>
+        </div>
+        <div
+          class="flex flex-col gap-2"
+        >
+          <p>
+            Highlights
+          </p>
+          <ul
+            class="list-disc ml-4"
+          >
+            <li
+              class="font-light"
+            >
+              Small business
+            </li>
+            <li
+              class="font-light"
+            >
+              Local seller
+            </li>
+          </ul>
+        </div>
+        <div
+          class="flex flex-col gap-2"
+        >
+          <p>
+            Description
+          </p>
+          <p
+            class="font-light"
+          >
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          </p>
+        </div>
+        <button
+          class="bg-black text-white rounded-full p-3 transform transition-transform ease-in-out duration-200 hover:scale-105"
+        >
+          Add to basket
+        </button>
+        <div
+          class="flex justify-between md:gap-2 items-center"
+        >
+          <div
+            class="flex flex-col gap-2 items-center"
+          >
+            <i
+              class="fa-solid fa-truck text-base md:text-2xl lg:text-2xl"
+            />
+            <p
+              class="text-center text-xs lg:text-base"
+            >
+              Free shipping
+            </p>
+          </div>
+          <div
+            class="flex flex-col gap-2 items-center"
+          >
+            <i
+              class="fa-regular fa-circle-check text-base md:text-2xl lg:text-2xl"
+            />
+            <p
+              class="text-center text-xs lg:text-base"
+            >
+              30-Day-Gaurantee
+            </p>
+          </div>
+          <div
+            class="flex flex-col gap-2 items-center"
+          >
+            <i
+              class="fa-solid fa-rotate-left text-base md:text-2xl lg:text-2xl"
+            />
+            <p
+              class="text-center text-xs lg:text-base"
+            >
+              Simple Returns
+            </p>
+          </div>
+          <div
+            class="flex flex-col gap-2 items-center"
+          >
+            <i
+              class="fa-solid fa-gift text-base md:text-2xl lg:text-2xl"
+            />
+            <p
+              class="text-center text-xs lg:text-base"
+            >
+              3-5 Day Delivery
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -1,0 +1,203 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`<ProductPage /> > renders ProductPreview component with correct props based on params 1`] = `
+<div>
+  <div
+    class="flex flex-col gap-8 mt-10 mb-10 ml-8 mr-8 lg:mt-16 lg:mb-16 lg:ml-32 lg:mr-32"
+  >
+    <div
+      class="flex flex-col gap-2"
+    >
+      <a
+        class="text-blue-900 font-bold"
+        href="/"
+      >
+        <i
+          class="fa-solid fa-arrow-left"
+        />
+         Back to Home page
+      </a>
+      <h2
+        class="text-base lg:text-xl font-light"
+      >
+        All 
+        Back to school
+         products
+      </h2>
+      <p
+        class="font-light"
+      >
+        4
+         results
+      </p>
+    </div>
+    <div
+      class="grid gap-6 grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
+    >
+      <a
+        aria-label="Notebook"
+        href="/1/10"
+      >
+        <div
+          class="h-full flex flex-col gap-1 font-light text-sm lg:text-base cursor-pointer"
+          data-testid="product-preview"
+        >
+          <img
+            alt="product preview"
+            class="rounded-md object-cover flex-1"
+            src="/src/assets/products/notebook.jpg"
+          />
+          <div>
+            <i
+              class="fa-solid fa-star text-[10px] md:text-[14px] lg:text-[14px]"
+            />
+            <i
+              class="fa-solid fa-star text-[10px] md:text-[14px] lg:text-[14px]"
+            />
+            <i
+              class="fa-solid fa-star text-[10px] md:text-[14px] lg:text-[14px]"
+            />
+            <i
+              class="fa-solid fa-star text-[10px] md:text-[14px] lg:text-[14px]"
+            />
+            <i
+              class="fa-solid fa-star text-[10px] md:text-[14px] lg:text-[14px]"
+            />
+          </div>
+          <p
+            class="truncate text-xs md:text-sm lg:text-sm"
+          >
+            Notebook
+          </p>
+          <p
+            class="text-xs md:text-sm lg:text-sm"
+          >
+            £
+            5.99
+          </p>
+        </div>
+      </a>
+      <a
+        aria-label="Recycled Material Backpack"
+        href="/1/11"
+      >
+        <div
+          class="h-full flex flex-col gap-1 font-light text-sm lg:text-base cursor-pointer"
+          data-testid="product-preview"
+        >
+          <img
+            alt="product preview"
+            class="rounded-md object-cover flex-1"
+            src="/src/assets/products/backpack.jpg"
+          />
+          <div>
+            <i
+              class="fa-solid fa-star text-[10px] md:text-[14px] lg:text-[14px]"
+            />
+            <i
+              class="fa-solid fa-star text-[10px] md:text-[14px] lg:text-[14px]"
+            />
+            <i
+              class="fa-solid fa-star text-[10px] md:text-[14px] lg:text-[14px]"
+            />
+            <i
+              class="fa-solid fa-star text-[10px] md:text-[14px] lg:text-[14px]"
+            />
+          </div>
+          <p
+            class="truncate text-xs md:text-sm lg:text-sm"
+          >
+            Recycled Material Backpack
+          </p>
+          <p
+            class="text-xs md:text-sm lg:text-sm"
+          >
+            £
+            28
+          </p>
+        </div>
+      </a>
+      <a
+        aria-label="Handmade Pencil Case"
+        href="/1/12"
+      >
+        <div
+          class="h-full flex flex-col gap-1 font-light text-sm lg:text-base cursor-pointer"
+          data-testid="product-preview"
+        >
+          <img
+            alt="product preview"
+            class="rounded-md object-cover flex-1"
+            src="/src/assets/products/pencil-case.jpg"
+          />
+          <div>
+            <i
+              class="fa-solid fa-star text-[10px] md:text-[14px] lg:text-[14px]"
+            />
+            <i
+              class="fa-solid fa-star text-[10px] md:text-[14px] lg:text-[14px]"
+            />
+            <i
+              class="fa-solid fa-star text-[10px] md:text-[14px] lg:text-[14px]"
+            />
+            <i
+              class="fa-solid fa-star text-[10px] md:text-[14px] lg:text-[14px]"
+            />
+            <i
+              class="fa-solid fa-star text-[10px] md:text-[14px] lg:text-[14px]"
+            />
+          </div>
+          <p
+            class="truncate text-xs md:text-sm lg:text-sm"
+          >
+            Handmade Pencil Case
+          </p>
+          <p
+            class="text-xs md:text-sm lg:text-sm"
+          >
+            £
+            10
+          </p>
+        </div>
+      </a>
+      <a
+        aria-label="Homework Planner"
+        href="/1/13"
+      >
+        <div
+          class="h-full flex flex-col gap-1 font-light text-sm lg:text-base cursor-pointer"
+          data-testid="product-preview"
+        >
+          <img
+            alt="product preview"
+            class="rounded-md object-cover flex-1"
+            src="/src/assets/products/planner.jpg"
+          />
+          <div>
+            <i
+              class="fa-solid fa-star text-[10px] md:text-[14px] lg:text-[14px]"
+            />
+            <i
+              class="fa-solid fa-star text-[10px] md:text-[14px] lg:text-[14px]"
+            />
+            <i
+              class="fa-solid fa-star text-[10px] md:text-[14px] lg:text-[14px]"
+            />
+          </div>
+          <p
+            class="truncate text-xs md:text-sm lg:text-sm"
+          >
+            Homework Planner
+          </p>
+          <p
+            class="text-xs md:text-sm lg:text-sm"
+          >
+            £
+            12.99
+          </p>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+`;
