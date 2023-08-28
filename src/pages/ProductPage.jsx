@@ -18,7 +18,7 @@ function ProductPage() {
         <Link to="/" className="text-blue-900 font-bold">
           <i className="fa-solid fa-arrow-left"></i> Back to Home page
         </Link>
-        <h2 className="text-base lg:text-xl font-light">All {category.name} products</h2>
+        <h2 className="text-base font-light lg:text-xl">All {category.name} products</h2>
         <p className="font-light">{products.length} results</p>
       </div>
 

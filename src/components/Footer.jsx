@@ -1,7 +1,7 @@
 function Footer() {
   return (
     <footer className="text-indigo-50 font-light text-xs md:text-sm lg:text-base">
-      <div className="flex gap-6 p-6 bg-footerBlue md:justify-evenly md:p-10 lg:justify-evenly lg:p-10">
+      <div className="flex gap-6 p-6 bg-footerBlue md:justify-evenly md:p-10">
         <div>
           <p className="font-medium mb-5">Shop</p>
           <ul className="cursor-pointer flex flex-col gap-3">

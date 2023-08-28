@@ -16,6 +16,8 @@ function BasketProvider({ children, initialBasket = [] }) {
   // this avoids discrepencies in the quantity
   // of products when addToBasket is clicked in succession
 
+  console.log(basket)
+
   useEffect(() => {
     basketRef.current = basket;
   }, [basket]);

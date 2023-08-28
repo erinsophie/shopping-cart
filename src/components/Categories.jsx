@@ -4,12 +4,12 @@ import CategoryPreview from './CategoryPreview';
 
 function Categories() {
   return (
-    <div className="flex flex-col items-center gap-7 p-5 bg-pinkBeige md:p-8 lg:p-8">
+    <div className="flex flex-col items-center gap-7 p-5 bg-pinkBeige md:p-8">
       <h2 className="font-cormorant text-xl md:text-2xl lg:text-4xl">
         An online marketplace for creative crafts!
       </h2>
 
-      <div className="flex gap-5 md:gap-16 lg:gap-16">
+      <div className="flex gap-5 md:gap-16">
         {categories.map((category) => (
           <Link
             to={`/${category.id}`}
