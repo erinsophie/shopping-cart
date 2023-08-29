@@ -182,6 +182,7 @@ describe('Multiple product rednering', () => {
 // it's not a part of the basket components responsibilities to add items
 // but this is to check if the basket registers when an item is added
 describe('Adds item to basket', () => {
+
   it('Adds item to basket', async () => {
     let user = userEvent.setup();
 

@@ -12,7 +12,6 @@ function renderStars(count) {
 function ProductDetail() {
   // url params
   const { categoryId, productId } = useParams();
-  // basket context
   const { addToBasket } = useBasket();
 
   const category = categories.find(
@@ -75,7 +74,7 @@ function ProductDetail() {
           </div>
 
           <button
-            onClick={() => addToBasket(product)}
+            onClick={() => {addToBasket(product)}}
             className="bg-black text-white rounded-full p-3 transform transition-transform ease-in-out duration-200 hover:scale-105"
           >
             Add to basket
