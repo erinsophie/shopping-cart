@@ -8,14 +8,16 @@
 
 # Technologies Used
 
-- HTML
-- CSS
 - Javascript
 - React
+- React router
+- Context API
+- React testing library
+- Vitest
 
 Key learning:
 
-## React-Testing-Library
+## React testing library
 
 After briefly using Jest to test my Battleship project, I had some basic knowledge of testing but this project was where I got to level up!
 
