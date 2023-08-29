@@ -1,7 +1,7 @@
 import { describe, it, expect, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
-import ProductPage from '../pages/ProductPage';
 import { useParams, MemoryRouter } from 'react-router-dom';
+import ProductPage from '../pages/ProductPage';
 import allProducts from '../data/products';
 
 // mock react-router-dom in order to mock useParams

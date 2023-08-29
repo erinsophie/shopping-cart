@@ -1,8 +1,8 @@
 import { describe, it, expect, beforeEach, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
-import { BasketProvider, useBasket } from '../components/BasketContext';
 import userEvent from '@testing-library/user-event';
+import { BasketProvider, useBasket } from '../components/BasketContext';
 import Basket from '../components/Basket';
 import ProductDetail from '../pages/ProductDetail';
 

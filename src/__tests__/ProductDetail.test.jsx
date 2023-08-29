@@ -1,8 +1,7 @@
 import { describe, it, expect, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
-import { MemoryRouter } from 'react-router-dom';
+import { MemoryRouter, useParams } from 'react-router-dom';
 import ProductDetail from '../pages/ProductDetail';
-import { useParams } from 'react-router-dom';
 import allProducts from '../data/products';
 import categories from '../data/categories';
 import { BasketProvider } from '../components/BasketContext';
