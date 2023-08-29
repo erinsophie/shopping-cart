@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, useEffect, useRef } from 'react';
+import { createContext, useContext, useState } from 'react';
 
 const BasketContext = createContext();
 
@@ -9,45 +9,57 @@ function useBasket() {
 function BasketProvider({ children, initialBasket = [] }) {
   const [showBasket, setShowBasket] = useState(false);
   const [basket, setBasket] = useState(initialBasket);
-  const basketRef = useRef(basket);
 
-  console.log(basket)
-
-  useEffect(() => {
-    basketRef.current = basket;
-  }, [basket]);
+  console.log(basket);
 
   function addToBasket(newProduct) {
-    const currentBasket = basketRef.current;
-
-    const existingItemIndex = currentBasket.findIndex(
-      (item) => item.product.id === newProduct.id,
-    );
-
-    if (existingItemIndex !== -1) {
-      const updatedBasket = [...currentBasket];
-      updatedBasket[existingItemIndex].quantity += 1;
-      setBasket(updatedBasket);
+    // find product if it already exists in basket
+    if (basket.find((item) => item.product.id === newProduct.id)) {
+      // map over basket
+      // when you come to the item that already exists, update its quantity
+      setBasket((prevBasket) =>
+        prevBasket.map((basketItem) =>
+          basketItem.product.id === newProduct.id
+            ? {
+                product: basketItem.product,
+                quantity: basketItem.quantity + 1,
+              }
+            : basketItem,
+        ),
+      );
     } else {
-      setBasket([...currentBasket, { product: newProduct, quantity: 1 }]);
+      // or else add new item to basket
+      setBasket((prevBasket) => [
+        ...prevBasket,
+        { product: newProduct, quantity: 1 },
+      ]);
     }
   }
 
   function updateQuantity(basketItem, event) {
-    const currentBasket = basketRef.current;
-    const indexOfItem = basket.indexOf(basketItem);
-    const updatedBasket = [...currentBasket];
+    const plus = event.target.textContent === '+';
+    const minus = event.target.textContent === '-';
 
-    if (event.target.textContent === '-') {
-      if (updatedBasket[indexOfItem].quantity === 1) {
-        deleteProduct(basketItem.product.id);
-      } else {
-        updatedBasket[indexOfItem].quantity -= 1;
-        setBasket(updatedBasket);
-      }
-    } else if (event.target.textContent === '+') {
-      updatedBasket[indexOfItem].quantity += 1;
-      setBasket(updatedBasket);
+    if (minus && basketItem.quantity === 1) {
+      setBasket((prevBasket) =>
+        prevBasket.filter((item) => item.product.id !== basketItem.product.id),
+      );
+    } else {
+      setBasket((prevBasket) =>
+        prevBasket.map((item) =>
+          // loop through all basket items
+          // if the basket item product id matches the clicked on basket item product id
+          // then update quantity or return item as is
+          item.product.id === basketItem.product.id
+            ? {
+                product: basketItem.product,
+                quantity: plus
+                  ? basketItem.quantity + 1
+                  : basketItem.quantity - 1,
+              }
+            : item,
+        ),
+      );
     }
   }
 
