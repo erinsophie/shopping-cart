@@ -194,7 +194,6 @@ describe('Adds item to basket', () => {
 
           return (
             <div>
-              <p>{mockProduct.name}</p>
               <button onClick={() => addToBasket(mockProduct)}>
                 Add to basket
               </button>
@@ -216,8 +215,12 @@ describe('Adds item to basket', () => {
 
     const button = screen.getByRole('button', { name: 'Add to basket' });
     await user.click(button);
+    await user.click(button);
+    await user.click(button);
     const items = screen.getAllByTestId('basket-item');
-
+    
+    // 1 item with quantity 3
     expect(items.length).toBe(1);
+    expect(screen.getByText('3 items')).toBeInTheDocument();
   });
 });

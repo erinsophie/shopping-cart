@@ -11,12 +11,7 @@ function BasketProvider({ children, initialBasket = [] }) {
   const [basket, setBasket] = useState(initialBasket);
   const basketRef = useRef(basket);
 
-  // when basket changes, set the current ref to be
-  // the most recent state of the basket
-  // this avoids discrepencies in the quantity
-  // of products when addToBasket is clicked in succession
-
-  console.log(basket)
+  console.log(basket);
 
   useEffect(() => {
     basketRef.current = basket;
@@ -70,8 +65,12 @@ function BasketProvider({ children, initialBasket = [] }) {
   }
 
   function deleteProduct(productId) {
-    const newBasket = basket.filter((item) => item.product.id !== productId);
-    setBasket(newBasket);
+    setBasket((prevBasket) => {
+      const newBasket = prevBasket.filter(
+        (item) => item.product.id !== productId,
+      );
+      return newBasket
+    });
   }
 
   function clearBasket() {
