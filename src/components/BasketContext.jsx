@@ -9,32 +9,27 @@ function useBasket() {
 function BasketProvider({ children, initialBasket = [] }) {
   const [showBasket, setShowBasket] = useState(false);
   const [basket, setBasket] = useState(initialBasket);
-  const basketRef = useRef(basket);
 
   console.log(basket);
 
-  useEffect(() => {
-    basketRef.current = basket;
-  }, [basket]);
-
   function addToBasket(newProduct) {
-    const currentBasket = basketRef.current;
+    setBasket((prevBasket) => {
+      const existingItemIndex = prevBasket.findIndex(
+        (item) => item.product.id === newProduct.id,
+      );
 
-    const existingItemIndex = currentBasket.findIndex(
-      (item) => item.product.id === newProduct.id,
-    );
-
-    if (existingItemIndex !== -1) {
-      const updatedBasket = [...currentBasket];
-      updatedBasket[existingItemIndex].quantity += 1;
-      setBasket(updatedBasket);
-    } else {
-      setBasket([...currentBasket, { product: newProduct, quantity: 1 }]);
-    }
+      if (existingItemIndex !== -1) {
+        const updatedBasket = [...prevBasket];
+        updatedBasket[existingItemIndex].quantity += 1;
+        return updatedBasket;
+      } else {
+        return [...prevBasket, { product: newProduct, quantity: 1 }];
+      }
+    });
   }
 
   function updateQuantity(basketItem, event) {
-    const currentBasket = basketRef.current;
+    setBasket()
     const indexOfItem = basket.indexOf(basketItem);
     const updatedBasket = [...currentBasket];
 
@@ -69,7 +64,7 @@ function BasketProvider({ children, initialBasket = [] }) {
       const newBasket = prevBasket.filter(
         (item) => item.product.id !== productId,
       );
-      return newBasket
+      return newBasket;
     });
   }
 
