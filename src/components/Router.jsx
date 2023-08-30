@@ -34,11 +34,7 @@ function Router() {
     },
   ]);
 
-  return (
-    <BasketProvider>
-      <RouterProvider router={router} />
-    </BasketProvider>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default Router;

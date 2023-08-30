@@ -6,6 +6,26 @@ import { BasketProvider, useBasket } from '../components/BasketContext';
 import Basket from '../components/Basket';
 import ProductDetail from '../pages/ProductDetail';
 
+vi.mock('../components/BasketContext', async () => {
+  // actual basket context component
+  const actual = await vi.importActual('../components/BasketContext');
+  // original useBasket hook
+  const originalUseBasket = actual.useBasket;
+  
+  // return other exports 
+  return {
+    ...actual,
+    // return all other useBasket values but set show basket to true
+    useBasket: () => {
+      const basketValues = originalUseBasket();
+      return {
+        ...basketValues,
+        showBasket: true, 
+      };
+    },
+  };
+});
+
 describe('Render tests', () => {
   // snapshot
   it('Matches snapshot', () => {
@@ -182,7 +202,6 @@ describe('Multiple product rednering', () => {
 // it's not a part of the basket components responsibilities to add items
 // but this is to check if the basket registers when an item is added
 describe('Adds item to basket', () => {
-
   it('Adds item to basket', async () => {
     let user = userEvent.setup();
 
@@ -219,7 +238,7 @@ describe('Adds item to basket', () => {
     await user.click(button);
     await user.click(button);
     const items = screen.getAllByTestId('basket-item');
-    
+
     // 1 item with quantity 3
     expect(items.length).toBe(1);
     expect(screen.getByText('3 items')).toBeInTheDocument();

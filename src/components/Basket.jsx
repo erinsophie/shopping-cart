@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 function Basket() {
   const {
     basket,
+    showBasket,
     setShowBasket,
     getSubtotal,
     getBasketAmount,
@@ -12,7 +13,7 @@ function Basket() {
     updateQuantity,
   } = useBasket();
 
-  return (
+  return showBasket ? (
     <div className="fixed top-0 right-0 z-10 w-full h-full bg-white p-8 overflow-y-auto border border-black flex flex-col gap-10 md:w-1/2 lg:w-1/3">
       <div className="flex justify-between">
         <div className="flex flex-col gap-2">
@@ -94,7 +95,7 @@ function Basket() {
         ) : null}
       </div>
     </div>
-  );
+  ) : null;
 }
 
 export default Basket;

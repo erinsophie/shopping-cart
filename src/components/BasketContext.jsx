@@ -108,3 +108,4 @@ function BasketProvider({ children, initialBasket = [] }) {
 }
 
 export { useBasket, BasketProvider };
+
