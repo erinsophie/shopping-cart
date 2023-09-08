@@ -8,24 +8,24 @@ function ProductDetail() {
   const { category, productId } = useParams();
   const { addToBasket } = useBasket();
 
-  async function fetchProduct() {
-    try {
-      let response = await fetch(
-        `https://fakestoreapi.com/products/${productId}`,
-      );
-      if (!response.ok) {
-        throw new Error('Network response was not ok ' + response.statusText);
-      }
-      let data = await response.json();
-      setProduct(data);
-    } catch (error) {
-      console.error('Fetch error', error);
-    } finally {
-      setLoading(false);
-    }
-  }
-
   useEffect(() => {
+    async function fetchProduct() {
+      try {
+        let response = await fetch(
+          `https://fakestoreapi.com/products/${productId}`,
+        );
+        if (!response.ok) {
+          throw new Error('Network response was not ok ' + response.statusText);
+        }
+        let data = await response.json();
+        setProduct(data);
+      } catch (error) {
+        console.error('Fetch error', error);
+      } finally {
+        setLoading(false);
+      }
+    }
+
     fetchProduct();
   }, []);
 
