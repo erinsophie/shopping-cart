@@ -5,17 +5,17 @@ function Header() {
   const { setShowBasket, getBasketAmount } = useBasket();
 
   return (
-    <div className="flex items-center gap-3 p-3 border-b border-gray-300 md:p-6 md:gap-6 md:pl-16 md:pr-16 lg:pl-28 lg:pr-28 lg:p-5 lg:gap-10">
+    <div className=" bg-purple text-white flex items-center gap-3 p-3 border-b border-gray-300 md:p-6 md:gap-6 md:pl-16 md:pr-16 lg:pl-28 lg:pr-28 lg:p-5 lg:gap-10">
       <div className="flex items-center gap-3 flex-1">
         <Link to="/">
-          <h1 className="text-xl font-cormorant md:text-2xl lg:text-4xl">
-            Crafty
+          <h1 className="text-xl md:text-2xl lg:text-3xl">
+            FakeStore
           </h1>
         </Link>
         <input
           type="search"
           placeholder="Search for anything"
-          className="border border-black border-2 rounded-full bg-gray-100 w-full p-1 font-light text-xs md:text-sm lg:p-2.5 lg:text-base"
+          className="rounded-full bg-gray-100 w-full p-1 font-light text-xs md:text-sm lg:p-2.5 lg:text-base"
         />
 
         <button aria-label="search">

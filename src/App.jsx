@@ -6,7 +6,7 @@ import Basket from '../src/components/Basket';
 
 function App() {
   return (
-    <div>
+    <div className='flex flex-col h-screen'>
       <BasketProvider>
         <Header />
         <Basket />

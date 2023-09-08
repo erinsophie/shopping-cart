@@ -1,25 +1,45 @@
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import categories from '../data/categories';
-import CategoryPreview from './CategoryPreview';
 
 function Categories() {
-  return (
-    <div className="flex flex-col items-center gap-7 p-5 bg-pinkBeige md:p-8">
-      <h2 className="font-cormorant text-xl md:text-2xl lg:text-4xl">
-        An online marketplace for creative crafts!
-      </h2>
+  const [categories, setCategories] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-      <div className="flex gap-5 md:gap-16">
-        {categories.map((category) => (
-          <Link
-            to={`/${category.id}`}
-            key={category.id}
-            aria-label={category.name}
-          >
-            <CategoryPreview src={category.image} name={category.name} />
-          </Link>
-        ))}
-      </div>
+  // fetch categories
+  async function fetchCategories() {
+    try {
+      let response = await fetch(
+        'https://fakestoreapi.com/products/categories',
+      );
+      if (!response.ok) {
+        throw new Error('Network response was not ok ' + response.statusText);
+      }
+      let data = await response.json();
+      setCategories(data);
+    } catch (error) {
+      console.error('Fetch error', error);
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  useEffect(() => {
+    fetchCategories();
+  }, []);
+
+  return (
+    <div className="flex justify-center gap-7 p-3 md:p-8">
+      {loading ? (
+        <p>Loading...</p> 
+      ) : (
+        <div className="flex gap-5 md:gap-16">
+          {categories.map((category, index) => (
+            <Link to={`/${category}`} key={index} aria-label={category}>
+              <p className='text-center'>{category}</p>
+            </Link>
+          ))}
+        </div>
+      )}
     </div>
   );
 }

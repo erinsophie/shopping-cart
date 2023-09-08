@@ -6,11 +6,9 @@ export default {
     extend: {
       fontFamily: {
         inter: ['Inter', 'sans-serif'],
-        cormorant: ['Cormorant Garamond', 'serif'],
       },
-      backgroundColor: {
-        footerBlue: '#2f466c',
-        pinkBeige: '#f8ebe6',
+      colors: {
+        purple: '#681CAB',
       },
     },
   },

@@ -1,5 +1,4 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import { BasketProvider } from '../components/BasketContext';
 import Error from '../pages/Error';
 import App from '../App';
 import Home from '../pages/Home';
@@ -18,11 +17,11 @@ function Router() {
           element: <Home />,
         },
         {
-          path: '/:categoryId',
+          path: '/:category',
           element: <ProductPage />,
         },
         {
-          path: '/:categoryId/:productId',
+          path: '/:category/:productId',
           element: <ProductDetail />,
         },
         {
