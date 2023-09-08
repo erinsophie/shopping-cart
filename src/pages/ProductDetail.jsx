@@ -29,7 +29,7 @@ function ProductDetail() {
     fetchProduct();
   }, []);
 
-  if (!product) {
+  if (!product && !loading) {
     return (
       <div className="flex flex-col h-screen p-6 gap-3">
         <p className="text-2xl">Oops! This product does not exist</p>

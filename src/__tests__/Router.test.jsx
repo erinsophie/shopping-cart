@@ -61,11 +61,11 @@ describe('Renders checkout and error pages correctly', () => {
     cleanup();
   });
 
-  it('Renders error page when product is not found', () => {
+  it('Renders error page when product is not found', async () => {
     window.location = new URL('http://localhost:5173/electronics/745674');
     render(<Router />);
     expect(
-      screen.getByText(/oops! this product does not exist/i),
+      await screen.findByText(/oops! this product does not exist/i),
     ).toBeInTheDocument();
 
     cleanup();

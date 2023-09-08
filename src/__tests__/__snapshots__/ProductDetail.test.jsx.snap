@@ -3,24 +3,22 @@
 exports[`Render tests > Matches snapshot 1`] = `
 <div>
   <div
-    class="flex flex-col h-screen p-6 gap-3"
+    class="flex-1 mt-10 mb-10 ml-8 mr-8 lg:mt-16 lg:mb-16 lg:ml-32 lg:mr-32"
+    data-testid="product-detail-page"
   >
-    <p
-      class="text-2xl"
-    >
-      Oops! This product does not exist
-    </p>
     <a
-      class="text-blue-900 font-bold "
+      class="text-blue-900 font-bold"
       href="/jewelery"
     >
       <i
         class="fa-solid fa-arrow-left"
       />
-       Go back to 
+       Back to 
       jewelery
-       page
     </a>
+    <p>
+      Loading...
+    </p>
   </div>
 </div>
 `;
