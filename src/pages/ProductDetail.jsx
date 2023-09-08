@@ -18,7 +18,6 @@ function ProductDetail() {
       }
       let data = await response.json();
       setProduct(data);
-      console.log(product);
     } catch (error) {
       console.error('Fetch error', error);
     } finally {
@@ -29,6 +28,17 @@ function ProductDetail() {
   useEffect(() => {
     fetchProduct();
   }, []);
+
+  if (!product) {
+    return (
+      <div className="flex flex-col h-screen p-6 gap-3">
+        <p className="text-2xl">Oops! This product does not exist</p>
+        <Link to={`/${category}`} className="text-blue-900 font-bold ">
+          <i className="fa-solid fa-arrow-left"></i> Go back to {category} page
+        </Link>
+      </div>
+    );
+  }
 
   return (
     <div

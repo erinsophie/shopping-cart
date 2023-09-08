@@ -43,14 +43,14 @@ function Basket() {
               <div className="w-32 h-36">
                 <img
                   src={basketItem.product.image}
-                  alt={basketItem.product.name}
+                  alt={basketItem.product.title}
                   className="w-full h-full object-cover"
                 ></img>
               </div>
 
               <div className="flex flex-col justify-between w-full p-4">
                 <div className="flex justify-between">
-                  <p>{basketItem.product.name}</p>
+                  <p>{basketItem.product.title}</p>
                   <button
                     onClick={() => deleteProduct(basketItem.product.id)}
                     className="fa-regular fa-trash-can"

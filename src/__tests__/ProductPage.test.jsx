@@ -5,10 +5,9 @@ import {
   act,
   waitForElementToBeRemoved,
 } from '@testing-library/react';
-import { MemoryRouter } from 'react-router-dom';
+import { MemoryRouter, useParams } from 'react-router-dom';
 import { BasketProvider } from '../components/BasketContext';
-import Categories from '../components/Categories';
-import { capitaliseLetter } from '../utils/utils';
+import ProductPage from '../pages/ProductPage';
 
 // mock fetch function
 window.fetch = vi.fn();
@@ -21,13 +20,42 @@ function createFetchResponse(data) {
   };
 }
 
+// mock react-router-dom in order to mock useParams
+vi.mock('react-router-dom', async () => {
+  const actual = await vi.importActual('react-router-dom');
+  return {
+    ...actual,
+    useParams: vi.fn(),
+  };
+});
+
 describe('Render tests', () => {
   beforeEach(() => {
-    // set the returned resolved value to be the categories array
-    fetch.mockResolvedValue(createFetchResponse(categories));
+    // mock params
+    useParams.mockReturnValue({ category: 'electronics' });
+    // set the returned value to be the mock products array
+    fetch.mockResolvedValue(createFetchResponse(mockProducts));
   });
 
-  const categories = ['category1', 'category2', 'category3', 'category4'];
+  const mockProducts = [
+    {
+      id: 5,
+      title: 'title1',
+      price: '39.99',
+      category: 'electronics',
+      description: 'lorem ipsum',
+      image: 'img',
+    },
+    {
+      id: 8,
+      title: 'title2',
+      price: '20',
+      category: 'electronics',
+      description: 'lorem ipsum',
+      image: 'image',
+    },
+  ];
+
   let container;
 
   // snapshot
@@ -35,7 +63,7 @@ describe('Render tests', () => {
     const { container: renderedContainer } = render(
       <MemoryRouter>
         <BasketProvider>
-          <Categories />
+          <ProductPage />
         </BasketProvider>
       </MemoryRouter>,
     );
@@ -48,7 +76,7 @@ describe('Render tests', () => {
     render(
       <MemoryRouter>
         <BasketProvider>
-          <Categories />
+          <ProductPage />
         </BasketProvider>
       </MemoryRouter>,
     );
@@ -58,48 +86,34 @@ describe('Render tests', () => {
     await waitForElementToBeRemoved(() => screen.getByText('Loading...'));
   });
 
-  it('Makes a GET request to fetch categories', () => {
+  it('Makes a GET request to fetch products', () => {
     render(
       <MemoryRouter>
         <BasketProvider>
-          <Categories />
+          <ProductPage />
         </BasketProvider>
       </MemoryRouter>,
     );
 
     expect(fetch).toHaveBeenCalledWith(
-      'https://fakestoreapi.com/products/categories',
+      'https://fakestoreapi.com/products/category/electronics',
     );
   });
 
-  it('Displays correct amount of categories', async () => {
-    render(
-      <MemoryRouter>
-        <BasketProvider>
-          <Categories />
-        </BasketProvider>
-      </MemoryRouter>,
-    );
-
-    const links = await screen.findAllByRole('link');
-    expect(links).toHaveLength(4);
-  });
-
-  it('Displays category names', async () => {
+  it('Renders correct products for the given category', () => {
     act(() => {
       render(
         <MemoryRouter>
           <BasketProvider>
-            <Categories />
+            <ProductPage />
           </BasketProvider>
         </MemoryRouter>,
       );
     });
 
-    categories.forEach(async (category) => {
-      expect(
-        await screen.findByText(capitaliseLetter(category)),
-      ).toBeInTheDocument();
+    mockProducts.forEach(async (product) => {
+      const title = await screen.findByText(product.title);
+      expect(title).toBeInTheDocument();
     });
   });
 });

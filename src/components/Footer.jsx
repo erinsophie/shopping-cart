@@ -1,6 +1,6 @@
 function Footer() {
   return (
-    <footer className="border border-black font-light text-xs md:text-sm lg:text-base">
+    <footer className="border-t border-black font-light text-xs md:text-sm lg:text-base">
       <div className="flex gap-6 p-6 bg-footerBlue md:justify-evenly md:p-10">
         <div>
           <p className="font-medium mb-5">Shop</p>

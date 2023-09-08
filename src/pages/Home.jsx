@@ -4,12 +4,19 @@ import homePage from '../assets/img/home-page.jpg';
 
 function Home() {
   return (
-    <div className="flex-1">
+    <div className="flex-1 overflow-hidden lg:overflow-visible">
       <Categories />
-      <img src={homePage} className="relative"></img>
-      <Link to="/electronics">
-        <button className="rounded-lg bg-white absolute top-">Shop electronics</button>
-      </Link>
+      <div className="relative">
+        <img
+          src={homePage}
+          className="h-full object-cover lg:h-screen lg:w-full"
+        />
+        <Link to="/electronics">
+          <button className="text-white absolute top-10 right-10 bg-purple p-3 rounded-xl transform transition-transform ease-in-out duration-200 hover:scale-110">
+            Shop electronics <i className="fa-solid fa-arrow-right"></i>
+          </button>
+        </Link>
+      </div>
     </div>
   );
 }

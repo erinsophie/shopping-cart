@@ -9,7 +9,8 @@ function useBasket() {
 function BasketProvider({ children, initialBasket = [] }) {
   const [showBasket, setShowBasket] = useState(false);
   const [basket, setBasket] = useState(initialBasket);
-
+ 
+  console.log('Basket:')
   console.log(basket);
 
   function addToBasket(newProduct) {

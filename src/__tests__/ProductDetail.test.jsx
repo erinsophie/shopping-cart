@@ -1,10 +1,24 @@
-import { describe, it, expect, vi } from 'vitest';
-import { render, screen } from '@testing-library/react';
+import { describe, it, expect, vi, beforeEach } from 'vitest';
+import {
+  render,
+  screen,
+  act,
+  waitForElementToBeRemoved,
+} from '@testing-library/react';
 import { MemoryRouter, useParams } from 'react-router-dom';
 import ProductDetail from '../pages/ProductDetail';
-import allProducts from '../data/products';
-import categories from '../data/categories';
 import { BasketProvider } from '../components/BasketContext';
+
+// mock fetch function
+window.fetch = vi.fn();
+
+// create mock response
+function createFetchResponse(data) {
+  return {
+    ok: true,
+    json: () => Promise.resolve(data),
+  };
+}
 
 // mock react-router-dom in order to mock useParams
 vi.mock('react-router-dom', async () => {
@@ -15,13 +29,28 @@ vi.mock('react-router-dom', async () => {
   };
 });
 
-describe('<ProductDetail />', () => {
-  it('renders ProductDetail page correctly', () => {
-    // set mock return value for useParams
-    useParams.mockReturnValue({ categoryId: '1', productId: '10' });
+describe('Render tests', () => {
+  beforeEach(() => {
+    // mock params
+    useParams.mockReturnValue({ category: 'jewelery', productId: 5 });
+    // set the returned value to be the mock products array
+    fetch.mockResolvedValue(createFetchResponse(mockProduct));
+  });
 
-    // render product detail page
-    const { container } = render(
+  const mockProduct = {
+    id: 5,
+    title: 'title1',
+    price: '129.99',
+    category: 'jewelery',
+    description: 'lorem ipsum',
+    image: 'img',
+  };
+
+  let container;
+
+  // snapshot
+  it('Matches snapshot', () => {
+    const { container: renderedContainer } = render(
       <MemoryRouter>
         <BasketProvider>
           <ProductDetail />
@@ -29,29 +58,51 @@ describe('<ProductDetail />', () => {
       </MemoryRouter>,
     );
 
-    // snapshot
+    container = renderedContainer;
     expect(container).toMatchSnapshot();
+  });
 
-    // get product object
-    const product = allProducts.find((product) => product.id === 10);
-    const category = categories.find((category) => category.id === 1);
-
-    // component
-    const component = screen.getByTestId('product-detail-page');
-
-    // test props data rendering
-    expect(component.querySelector('img')).toHaveAttribute(
-      'src',
-      product.image,
-    );
-    expect(screen.getByText(product.name)).toBeInTheDocument();
-    expect(screen.getByText(`£${product.price}`)).toBeInTheDocument();
-    expect(screen.getAllByRole('listitem')).toHaveLength(
-      product.highlights.length,
+  it('Loading text is shown while API is fetching data', async () => {
+    render(
+      <MemoryRouter>
+        <BasketProvider>
+          <ProductDetail />
+        </BasketProvider>
+      </MemoryRouter>,
     );
 
-    // link
-    const link = screen.getByRole('link');
-    expect(link).toHaveTextContent(`Back to ${category.name}`);
+    const loading = screen.getByText('Loading...');
+    expect(loading).toBeInTheDocument();
+    await waitForElementToBeRemoved(() => screen.getByText('Loading...'));
+  });
+
+  it('Makes a GET request to fetch products', () => {
+    render(
+      <MemoryRouter>
+        <BasketProvider>
+          <ProductDetail />
+        </BasketProvider>
+      </MemoryRouter>,
+    );
+
+    expect(fetch).toHaveBeenCalledWith('https://fakestoreapi.com/products/5');
+  });
+
+  it('Renders correct product details', async () => {
+    act(() => {
+      render(
+        <MemoryRouter>
+          <BasketProvider>
+            <ProductDetail />
+          </BasketProvider>
+        </MemoryRouter>,
+      );
+    });
+
+    expect(await screen.findByText(mockProduct.title)).toBeInTheDocument();
+    expect(
+      await screen.findByText(mockProduct.description),
+    ).toBeInTheDocument();
+    expect(await screen.findByText('Back to jewelery')).toBeInTheDocument();
   });
 });

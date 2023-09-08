@@ -1,26 +1,20 @@
-function renderStars(count) {
-  return Array.from({ length: count }).map((_, index) => (
-    <i key={index} className="fa-solid fa-star text-[10px] md:text-[14px]"></i>
-  ));
-}
-
-function ProductPreview({ image, stars, name, price }) {
+function ProductPreview({ image, title, price }) {
   return (
     <div
-      className="h-full flex flex-col gap-1 font-light text-sm cursor-pointer lg:text-base"
+      className="border border-black h-80 w-64 flex flex-col font-light text-sm lg:text-base"
       data-testid="product-preview"
     >
-      <img
-        className="rounded-md object-cover flex-1"
-        src={image}
-        alt="product preview"
-      ></img>
+      <div className="flex-1 overflow-hidden">
+        <img className="object-cover" src={image} alt={title} />
+      </div>
 
-      <div>{renderStars(stars)}</div>
-      <p className="truncate text-xs md:text-sm">{name}</p>
-      <p className="text-xs md:text-sm">£{price}</p>
+      <div className="p-3 bg-gray-500 bg-opacity-20">
+        <p className="font-bold truncate text-xs md:text-sm">{title}</p>
+        <p className="text-xs md:text-sm">£{price}</p>
+      </div>
     </div>
   );
 }
+
 
 export default ProductPreview;
