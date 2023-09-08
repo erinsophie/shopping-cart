@@ -1,6 +1,6 @@
 # Shopping cart
 
-## [Live Demo](https://shopping-cart.netlify.app)
+## [Live Demo](http://shopping-cart-erinsophie.netlify.app)
 
 ![Home](./src/assets/img/home.png)
 ![Product page](./src/assets/img/product-page.png)
@@ -31,7 +31,7 @@ A new concept that taught me a lot about SPA’s. It was interesting to think ab
 
 ## Context API
 
-The usage of react-router led me to discover react’s Context API! To start with I had the basket provider wrapping the whole router provider and did not really understand how the context sharing worked so just wrapped it around the whole project because that worked. Throughout the project I thought what might happen if I had multiple contexts and if the placement was a good idea. I experimented with ways of sharing this context and settled on keeping the basket provider in the App component and wrapping the elements that needed it since they were all sitting there which felt like a slightly better option. 
+The usage of react-router led me to discover react’s Context API! To start with I had the basket provider wrapping the whole router provider and did not really understand how the context sharing worked so just wrapped it around the whole project because that worked. Throughout the project I thought what might happen if I had multiple contexts and if the placement was a good idea. I experimented with ways of sharing this context and settled on keeping the basket provider in the App component and wrapping the elements that needed it since they were all sitting there which felt like a slightly better option.
 
 ## Tailwindcss
 
