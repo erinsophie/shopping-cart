@@ -3,8 +3,9 @@ import { capitaliseLetter } from '../utils/utils';
 import { Link } from 'react-router-dom';
 
 function Categories() {
-  const [categories, setCategories] = useState([]);
+  const [categories, setCategories] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   // fetch categories
   useEffect(() => {
@@ -18,8 +19,10 @@ function Categories() {
         }
         let data = await response.json();
         setCategories(data);
+        setError(null);
       } catch (error) {
-        console.error('Fetch error', error);
+        setError(error.message);
+        setCategories(null);
       } finally {
         setLoading(false);
       }
@@ -27,6 +30,9 @@ function Categories() {
 
     fetchCategories();
   }, []);
+
+  // display error
+  if (error) return <p>Error: {error}</p>;
 
   return (
     <div className="flex justify-center gap-7 p-3 md:p-8">

@@ -13,7 +13,6 @@ function Footer() {
         <div>
           <p className="font-medium mb-5">Sell</p>
           <ul className="cursor-pointer flex flex-col gap-3">
-            <li className="hover:underline">Sell on Crafty</li>
             <li className="hover:underline">Teams</li>
             <li className="hover:underline">Forums</li>
           </ul>

@@ -5,6 +5,7 @@ import { useBasket } from '../components/BasketContext';
 function ProductDetail() {
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   const { category, productId } = useParams();
   const { addToBasket } = useBasket();
 
@@ -19,8 +20,10 @@ function ProductDetail() {
         }
         let data = await response.json();
         setProduct(data);
+        setError(null);
       } catch (error) {
-        console.error('Fetch error', error);
+        setError(error.message);
+        setProduct(null);
       } finally {
         setLoading(false);
       }
@@ -29,16 +32,8 @@ function ProductDetail() {
     fetchProduct();
   }, []);
 
-  if (!product && !loading) {
-    return (
-      <div className="flex flex-col h-screen p-6 gap-3">
-        <p className="text-2xl">Oops! This product does not exist</p>
-        <Link to={`/${category}`} className="text-blue-900 font-bold ">
-          <i className="fa-solid fa-arrow-left"></i> Go back to {category} page
-        </Link>
-      </div>
-    );
-  }
+  // display error
+  if (error) return <p>Error: {error}</p>;
 
   return (
     <div
