@@ -86,7 +86,7 @@ function Basket() {
         {getBasketAmount() > 0 ? (
           <Link to="/checkout">
             <button
-              onClick={() => clearBasket()}
+              onClick={clearBasket}
               className="border border-black p-2.5 transform transition-transform ease-in-out duration-200 hover:scale-110"
             >
               Checkout
