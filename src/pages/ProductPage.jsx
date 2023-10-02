@@ -50,7 +50,7 @@ function ProductPage() {
 
   // filter products based on price cap
   const filteredProducts = products.filter((product) => {
-    return priceCap === '' ? true : product.price <= parseFloat(priceCap);
+    return priceCap === '' ? products : product.price <= parseFloat(priceCap);
   });
 
   return (
