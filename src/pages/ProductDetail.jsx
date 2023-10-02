@@ -60,6 +60,8 @@ function ProductDetail() {
               <p className="font-cormorant text-2xl md:text-3xl">
                 {product.title}
               </p>
+              <p>{product.rating.rate} rating</p>
+              <p className='text-gray-400'>({product.rating.count}) customer ratings</p>
               <p className="text-xl">£{product.price}</p>
             </div>
 
