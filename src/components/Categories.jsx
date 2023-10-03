@@ -11,13 +11,13 @@ function Categories() {
   useEffect(() => {
     async function fetchCategories() {
       try {
-        let response = await fetch(
+        const response = await fetch(
           'https://fakestoreapi.com/products/categories',
         );
         if (!response.ok) {
           throw new Error('Network response was not ok ' + response.statusText);
         }
-        let data = await response.json();
+        const data = await response.json();
         setCategories(data);
         setError(null);
       } catch (error) {

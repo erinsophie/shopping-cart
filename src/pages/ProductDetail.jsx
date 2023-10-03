@@ -12,13 +12,13 @@ function ProductDetail() {
   useEffect(() => {
     async function fetchProduct() {
       try {
-        let response = await fetch(
+        const response = await fetch(
           `https://fakestoreapi.com/products/${productId}`,
         );
         if (!response.ok) {
           throw new Error('Network response was not ok ' + response.statusText);
         }
-        let data = await response.json();
+        const data = await response.json();
         setProduct(data);
         setError(null);
       } catch (error) {
