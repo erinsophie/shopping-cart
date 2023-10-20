@@ -51,6 +51,7 @@ function ProductDetail() {
           <div className="min-w-[300px] max-w-[300px] min-h-[400px] max-h-[400px] lg:min-w-[450px] lg:max-w-[450px] lg:min-h-[600px] lg:max-h-[600px] overflow-hidden">
             <img
               src={product.image}
+              alt={product.title}
               className="h-full w-full object-cover"
             ></img>
           </div>

@@ -22,6 +22,7 @@ function Basket() {
         </div>
         <button
           onClick={() => setShowBasket((prev) => !prev)}
+          aria-label="Close basket"
           className="fa-solid fa-xmark text-2xl transform transition-transform ease-in-out duration-200 hover:scale-110"
           data-testid="close-basket-btn"
         ></button>
@@ -53,6 +54,7 @@ function Basket() {
                   <p>{basketItem.product.title}</p>
                   <button
                     onClick={() => deleteProduct(basketItem.product.id)}
+                    aria-label="Delete item from basket"
                     className="fa-regular fa-trash-can"
                     data-testid={`delete-button-${basketItem.product.id}`}
                   ></button>
@@ -62,6 +64,7 @@ function Basket() {
                   <div className="flex gap-3">
                     <button
                       onClick={(e) => updateQuantity(basketItem, e)}
+                      aria-label="Increase quantity of item by 1"
                       className="bg-gray-300 w-7"
                     >
                       -
@@ -69,6 +72,7 @@ function Basket() {
                     <p>{basketItem.quantity}</p>
                     <button
                       onClick={(e) => updateQuantity(basketItem, e)}
+                      aria-label="Decrease quantity of item by 1"
                       className="bg-gray-300 w-7"
                     >
                       +
