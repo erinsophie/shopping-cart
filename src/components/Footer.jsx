@@ -48,6 +48,7 @@ function Footer() {
           Built by
           <a
             href="https://github.com/erinsophie"
+            aria-label="Link to GitHub page"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:underline"
@@ -58,6 +59,7 @@ function Footer() {
           |{' '}
           <a
             href="https://github.com/erinsophie/shopping-cart"
+            aria-label="Link to GitHub repository"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:underline"
