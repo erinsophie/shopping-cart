@@ -43,31 +43,28 @@ function Footer() {
         </div>
       </div>
 
-      <div className="p-5 flex justify-end bg-footerBlue">
-        <p>
-          Built by
-          <a
-            href="https://github.com/erinsophie"
-            aria-label="Link to GitHub page"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:underline"
-          >
-            {' '}
-            erinsophie
-          </a>{' '}
-          |{' '}
-          <a
-            href="https://github.com/erinsophie/shopping-cart"
-            aria-label="Link to GitHub repository"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:underline"
-          >
-            {' '}
-            Source{' '}
-          </a>
-        </p>
+      <div className="p-5 flex justify-end gap-2 bg-footerBlue">
+        <a
+          href="https://github.com/erinsophie"
+          aria-label="Link to GitHub page"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:underline"
+        >
+          {' '}
+          erinsophie
+        </a>{' '}
+        |{' '}
+        <a
+          href="https://github.com/erinsophie/shopping-cart"
+          aria-label="Link to GitHub repository"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:underline"
+        >
+          {' '}
+          Source{' '}
+        </a>
       </div>
     </footer>
   );
