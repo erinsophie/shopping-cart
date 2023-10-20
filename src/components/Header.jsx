@@ -11,7 +11,7 @@ function Header() {
           <h1 className="text-xl md:text-2xl lg:text-3xl">FakeStore</h1>
         </Link>
 
-        <form className="w-full flex gap-3">
+        <form role="search" className="w-full flex gap-3">
           <label htmlFor="searchInput" className="sr-only">
             Search Query
           </label>
