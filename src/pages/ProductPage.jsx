@@ -16,7 +16,7 @@ function ProductPage() {
     "men's clothing",
   ];
 
-  console.log(products)
+  console.log(products);
 
   useEffect(() => {
     async function fetchProducts() {
@@ -54,7 +54,7 @@ function ProductPage() {
   });
 
   return (
-    <div className="flex-1 flex flex-col gap-8 mt-10 mb-10 ml-8 mr-8 lg:mt-16 lg:mb-16 lg:ml-32 lg:mr-32">
+    <main className="flex-1 flex flex-col gap-8 mt-10 mb-10 ml-8 mr-8 lg:mt-16 lg:mb-16 lg:ml-32 lg:mr-32">
       <div className="flex flex-col gap-2">
         <Link to="/" className="text-blue-900 font-bold">
           <i className="fa-solid fa-arrow-left"></i> Back to Home page
@@ -64,15 +64,17 @@ function ProductPage() {
         </h2>
         <p className="font-light">{products ? products.length : 0} results</p>
 
-        <label htmlFor="priceCap">Price cap: </label>
-        <input
-          type="number"
-          id="priceCap"
-          value={priceCap}
-          onChange={(e) => setPriceCap(e.target.value)}
-          placeholder="£50"
-          className="border border-black w-24"
-        />
+        <form>
+          <label htmlFor="priceCap">Price cap: </label>
+          <input
+            type="number"
+            id="priceCap"
+            value={priceCap}
+            onChange={(e) => setPriceCap(e.target.value)}
+            placeholder="£50"
+            className="border border-black w-24"
+          />
+        </form>
       </div>
 
       {loading ? (
@@ -82,11 +84,7 @@ function ProductPage() {
           <div className="flex flex-wrap gap-6 justify-center">
             {products &&
               filteredProducts.map((product) => (
-                <Link
-                  to={`/${category}/${product.id}`}
-                  key={product.id}
-                  aria-label={product.title}
-                >
+                <Link to={`/${category}/${product.id}`} key={product.id}>
                   <ProductPreview
                     image={product.image}
                     title={product.title}
@@ -97,7 +95,7 @@ function ProductPage() {
           </div>
         </div>
       )}
-    </div>
+    </main>
   );
 }
 

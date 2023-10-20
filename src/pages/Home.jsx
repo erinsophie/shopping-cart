@@ -4,11 +4,12 @@ import homePage from '../assets/img/home-page.jpg';
 
 function Home() {
   return (
-    <div className="flex-1 overflow-hidden lg:overflow-visible">
+    <main className="flex-1 overflow-hidden lg:overflow-visible">
       <Categories />
       <div className="relative">
         <img
           src={homePage}
+          alt="Group of friends sitting with their laptops"
           className="h-full object-cover lg:h-screen lg:w-full"
         />
         <Link to="/electronics">
@@ -17,7 +18,7 @@ function Home() {
           </button>
         </Link>
       </div>
-    </div>
+    </main>
   );
 }
 

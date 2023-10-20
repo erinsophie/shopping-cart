@@ -36,7 +36,7 @@ function ProductDetail() {
   if (error) return <p>Error: {error}</p>;
 
   return (
-    <div
+    <main
       className="flex-1 mt-10 mb-10 ml-8 mr-8 lg:mt-16 lg:mb-16 lg:ml-32 lg:mr-32"
       data-testid="product-detail-page"
     >
@@ -57,11 +57,13 @@ function ProductDetail() {
 
           <div className="flex flex-col gap-6">
             <div className="flex flex-col gap-2">
-              <p className="font-cormorant text-2xl md:text-3xl">
+              <h2 className="font-cormorant text-2xl md:text-3xl">
                 {product.title}
-              </p>
+              </h2>
               <p>{product.rating.rate} rating</p>
-              <p className='text-gray-400'>({product.rating.count}) customer ratings</p>
+              <p className="text-gray-500">
+                ({product.rating.count}) customer ratings
+              </p>
               <p className="text-xl">£{product.price}</p>
             </div>
 
@@ -108,7 +110,7 @@ function ProductDetail() {
           </div>
         </div>
       )}
-    </div>
+    </main>
   );
 }
 

@@ -39,15 +39,17 @@ function Categories() {
       {loading ? (
         <p>Loading...</p>
       ) : (
-        <div className="flex gap-5 md:gap-16">
+        <nav className="flex gap-5 md:gap-16">
           {categories.map((category, index) => (
-            <Link to={`/${category}`} key={index} aria-label={category}>
-              <p className="text-center transform transition-transform ease-in-out duration-200 hover:scale-110">
-                {capitaliseLetter(category)}
-              </p>
+            <Link
+              to={`/${category}`}
+              key={index}
+              className="text-center transform transition-transform ease-in-out duration-200 hover:scale-110"
+            >
+              {capitaliseLetter(category)}
             </Link>
           ))}
-        </div>
+        </nav>
       )}
     </div>
   );
